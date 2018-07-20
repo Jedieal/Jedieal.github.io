@@ -124,7 +124,7 @@
 <meta property="og:description" content="LINUX 初探">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://chuantu.biz/t6/336/1530283995x-1404764882.png">
-<meta property="og:updated_time" content="2018-07-08T15:02:34.995Z">
+<meta property="og:updated_time" content="2018-07-13T15:08:29.395Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux教程.md">
 <meta name="twitter:description" content="LINUX 初探">
@@ -402,7 +402,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-07-08 23:02:34" itemprop="dateModified" datetime="2018-07-08T23:02:34+08:00">2018-07-08</time>
+                <time title="修改时间：2018-07-13 23:08:29" itemprop="dateModified" datetime="2018-07-13T23:08:29+08:00">2018-07-13</time>
               
             
           </span>
@@ -475,7 +475,87 @@
       </div>
       
         <h1 id="LINUX-初探"><a href="#LINUX-初探" class="headerlink" title="LINUX 初探"></a>LINUX 初探</h1><a id="more"></a>
-<h2 id="知识概念"><a href="#知识概念" class="headerlink" title="知识概念"></a>知识概念</h2><h3 id="文件与用户的关系"><a href="#文件与用户的关系" class="headerlink" title="文件与用户的关系"></a>文件与用户的关系</h3><ul>
+<h2 id="知识概念"><a href="#知识概念" class="headerlink" title="知识概念"></a>知识概念</h2><h3 id="网络概述"><a href="#网络概述" class="headerlink" title="网络概述"></a>网络概述</h3><p>1970年 — Linux元年<br>1969年 — Internet元年</p>
+<ul>
+<li><p><strong>局域网(LAN)</strong></p>
+<pre><code>- Local Area Network : 指范围在几百米到十几公里内办公楼群或校区内的计算机相互连接所构成的计算机网络
+</code></pre></li>
+<li><p><strong>城域网(MAN)</strong></p>
+<pre><code>+ Metropolitan Area Network
+</code></pre></li>
+</ul>
+<ul>
+<li><strong>广域网(WAN)</strong><pre><code>- Wide Area Network : 通常跨接很大的物理范围，如一个国家
+</code></pre></li>
+</ul>
+<p><br></p>
+<p><strong>网络分类 – 公网 &amp; 内网</strong></p>
+<p>公网：上网的计算机得到的 IP 地址是 Internet 上的<strong>非保留地址</strong>，公网的计算机和 Internet 上的其他计算机可以<strong>随意相互访问</strong></p>
+<h3 id="IP-地址"><a href="#IP-地址" class="headerlink" title="IP 地址"></a>IP 地址</h3><p>IP (Internet Protocol) : 网络之间互连的协议，即网络相互连接进行通信而设计的<strong>协议</strong></p>
+<p>IP 地址类型 ： <font color="red"><b>公有地址、私有地址</b></font></p>
+<p>1.0.0.0 - 255.255.255.255</p>
+<ul>
+<li><p>公有地址(Public address)</p>
+<ul>
+<li>公有地址由 <strong>Inter NIC (Internet Network Information Center 因特网信息中心)</strong>负责。这些 IP 地址分配给注册并向 Inter NIC 提出申请的组织机构(免费)，可以通过它直接访问因特网</li>
+</ul>
+</li>
+<li><p>私有地址(Private address)</p>
+<ul>
+<li>私有地址属于 <font color="red"><b>非注册地址</b></font>，专门为组织机构内部使用，用以分散使用</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>私有 IP 地址</th>
+<th>使用对象</th>
+<th>最大主机数</th>
+<th>最大网络数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A 类</td>
+<td>10.0.0.0 - 10.255.255.255</td>
+<td>电信、联通等运营商</td>
+<td>16777214</td>
+<td>126 (2^7-2)</td>
+</tr>
+<tr>
+<td>B 类</td>
+<td>172.16.0.0 - 172.31.255.255</td>
+<td></td>
+<td>65534</td>
+<td>16384(2^14)</td>
+</tr>
+<tr>
+<td>C 类</td>
+<td>192.168.0.0 - 192.168.255.255</td>
+<td>使用最多</td>
+<td>254</td>
+<td>2097152(2^21)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a><strong>DNS</strong></h3><p>DNS (Domin Name System 域名系统) ： 因特网上作为域名和 IP 地址相互映射的一个分布式数据库，能使用户更方便的访问互联网</p>
+<p><strong>域名解析</strong></p>
+<blockquote>
+<p>用户通过主机名，最终得到该主机名对应的 IP 地址的过程</p>
+</blockquote>
+<p><strong>步骤：</strong></p>
+<p><strong>用户输入域名 localhost –&gt; DNS (localhost 127.0.0.1) –&gt; 服务器电脑</strong></p>
+<h3 id="端口-Port"><a href="#端口-Port" class="headerlink" title="端口(Port)"></a>端口(Port)</h3><blockquote>
+<p>端口可以认为是设备与外界通讯交流的出口</p>
+</blockquote>
+<p>端口: <font color="red"><b>虚拟端口</b></font> 和 <font color="red"><b>物理端口</b></font></p>
+<p><strong>虚拟端口</strong> ： 计算机内部或者交换机路由器内的端口，不可见端口</p>
+<p><strong>物理端口</strong> ： 如计算机的 80端口、 21端口等，可见端口例如 计算机背板的 RJ45网口</p>
+<p><br></p>
+<p>**用户输入域名 localhost：端口 –&gt; DNS (localhost 127.0.0.1) –&gt; 服务器电脑 –&gt; 软件（服务）</p>
+<h2 id=""><a href="#" class="headerlink" title="**"></a>**</h2><h3 id="文件与用户的关系"><a href="#文件与用户的关系" class="headerlink" title="文件与用户的关系"></a>文件与用户的关系</h3><ul>
 <li>所有者 u : 只有一个，但可以交换</li>
 <li>用户组 g ： 只有一个，可以使用文件，但不是所有者</li>
 <li>其他人 o ： 既不属于所有者，又不是用户组</li>
@@ -874,6 +954,142 @@
 </li>
 </ul>
 <hr>
+<h2 id="文件搜索命令"><a href="#文件搜索命令" class="headerlink" title="文件搜索命令"></a>文件搜索命令</h2><h3 id="文件搜索命令-find"><a href="#文件搜索命令-find" class="headerlink" title="文件搜索命令 find"></a>文件搜索命令 find</h3><ul>
+<li>命令名称： find  </li>
+<li>命令所在路径： /bin/find</li>
+<li><p>执行权限： 所有用户</p>
+</li>
+<li><p><strong>语法</strong></p>
+<ul>
+<li><strong>find [搜索范围][匹配条件]</strong></li>
+<li><strong>更多用法</strong><ul>
+<li><code>$find /etc -name init</code> :使用-name 精准搜索<ul>
+<li>粗略搜索 <code>*init*</code></li>
+<li>不分文件名大小写 <code>-iname</code></li>
+<li><ul>
+<li>：匹配任意字符  ？：匹配单个字符</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><code>$find / -size</code> : 使用-size 根据文件大小来查找<ul>
+<li><code>find / -size +204800</code> : 在根目录下查找大于100MB的文件</li>
+<li><strong> +n 大于 -n 小于 n 等于</strong></li>
+<li>大小说明<ul>
+<li>1K = 2数据块  1数据块 = 512字节 = 0.5K</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>$find /home -user（-group） yonghu</code> ：根据文件所有者(所属组)来查找</li>
+<li><code>find -type f</code> :根据<strong>文件类型</strong>查找 – f 文件  d 目录  l 软连接文件</li>
+<li><code>find -inum</code> : 根据<strong>i节点</strong>查找 ，通过i节点，可删除特殊文件</li>
+<li><strong>根据文件信息修改的时间来查找</strong><ul>
+<li><code>$find /etc -amin -5</code>:查找5分钟内被<strong>访问</strong>过的文件和目录  – <strong>access</strong></li>
+<li><code>$find /etc -cmin -5</code>:查找5分钟内被修改过<strong>属性</strong>的文件或目录  – <strong>change</strong></li>
+<li><code>$find /etc -mmin -5</code>:查找5分钟内被修改过<strong>内容</strong>的文件或目录  – <strong>modify</strong><br><br></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>常用连接选项</th>
+<th>作用</th>
+<th>范例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-a (and)</td>
+<td>表示两个条件同时满足</td>
+<td><code>$find /etc +163840 -a -size -204800</code></td>
+</tr>
+<tr>
+<td>-o (or)</td>
+<td>表示两个条件满足任意一个即可</td>
+<td><code>$find /etc 163840 -o -size 204800</code></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<font color="orange">注意事项</font>
+
+<ul>
+<li>查找文件时，文件名的大小写是区分开来的</li>
+</ul>
+<hr>
+<h3 id="文件搜索命令-locate"><a href="#文件搜索命令-locate" class="headerlink" title="文件搜索命令 locate"></a>文件搜索命令 locate</h3><ul>
+<li>命令名称： locate</li>
+<li>命令所在路径： /usr/bin/locate</li>
+<li>执行权限 ： 所有用户</li>
+</ul>
+<p><strong>语法</strong></p>
+<ul>
+<li><p>基本语法 </p>
+<ul>
+<li>locate 文件名</li>
+<li>功能 ： 在<strong>文件资料库中</strong>查找文件</li>
+<li>范例：<code>$locate init</code></li>
+<li>文件库： <code>/var/lib/mlocate/mlocate.db</code></li>
+</ul>
+</li>
+<li><p>拓展语法</p>
+<ul>
+<li><code>locate -i 文件名</code> : 不区分大小写来查找文件</li>
+</ul>
+</li>
+</ul>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><blockquote>
+<p>当创建的文件没有被存入文件资料库中时，无法使用locate查找到文件</p>
+</blockquote>
+<p>解决方法： <code>$ updatedb</code> 手动更新</p>
+<blockquote>
+<p>文件资料库不会收取 /tmp 临时文件夹下的文件，故使用locate可能无法搜索到该目录下文件</p>
+</blockquote>
+<h3 id="文件搜索命令-which"><a href="#文件搜索命令-which" class="headerlink" title="文件搜索命令 which"></a>文件搜索命令 which</h3><ul>
+<li>命令名称： which</li>
+<li>命令所在路径 ： /usr/bin/which</li>
+<li>执行权限 ： 所有用户</li>
+<li>功能描述： 搜索<strong>命令</strong>所在目录及别名信息</li>
+<li>例子 ： <code>$ which ls</code></li>
+</ul>
+<h3 id="文件搜索命令-whereis"><a href="#文件搜索命令-whereis" class="headerlink" title="文件搜索命令 whereis"></a>文件搜索命令 whereis</h3><ul>
+<li>命令名称: whereis</li>
+<li>命令所在路径： /usr/bin/whereis</li>
+<li>执行权限 ： 所有用户</li>
+<li>功能描述： 搜索命令所在目录及帮助文档路径</li>
+<li>例子：  <code>$ whereis ls</code></li>
+</ul>
+<h3 id="文件搜索命令-grep"><a href="#文件搜索命令-grep" class="headerlink" title="文件搜索命令 grep"></a>文件搜索命令 grep</h3><ul>
+<li>命令名称 ： grep</li>
+<li>命令所在路径： /bin/grep</li>
+<li>执行权限: 所有用户</li>
+<li>功能描述 : 在<strong>文件中</strong>搜寻<strong>字串匹配的行</strong>并输出，即在<strong>文件内</strong>进行搜索</li>
+</ul>
+<p><strong>语法</strong></p>
+<ul>
+<li><p>基本语法</p>
+<ul>
+<li><code>$ grep mysql /root/install.log</code></li>
+<li>$ grep + 查找关键词 + 文件所在地址  </li>
+</ul>
+</li>
+<li><p>拓展语法</p>
+<ul>
+<li><code>$ grep -i</code> : 不区分大小写来查找</li>
+<li><code>$ grep -v</code> : 排除指定字串来查找</li>
+<li><code>$ grep -v ^#</code> : 过滤掉位于行首的文件脚本注释行</li>
+</ul>
+</li>
+</ul>
+<hr>
 <h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><p><code>/proc/</code> <code>/sys/</code>  : 为系统内存和内核，只可读，写入的数据在重启时会清除，不要往内写入文件</p>
 <p><code>/tmp</code> : 临时目录，存放临时文件，建议不要存放重要文件，重启时最好清除</p>
 <p><code>/var</code> : 动态数据保存位置，注意保存缓存，日志已经软件运行产生的文件</p>
@@ -954,8 +1170,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/28/乐理知识/" rel="next" title="乐理知识.md">
-                <i class="fa fa-chevron-left"></i> 乐理知识.md
+              <a href="/2018/06/28/电音入门/" rel="next" title="电音入门.md">
+                <i class="fa fa-chevron-left"></i> 电音入门.md
               </a>
             
           </div>
@@ -1073,7 +1289,7 @@ var jiathis_config={
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1129,7 +1345,11 @@ var jiathis_config={
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1181,7 +1401,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LINUX-初探"><span class="nav-number">1.</span> <span class="nav-text">LINUX 初探</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识概念"><span class="nav-number">1.1.</span> <span class="nav-text">知识概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件与用户的关系"><span class="nav-number">1.1.1.</span> <span class="nav-text">文件与用户的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件操作"><span class="nav-number">1.1.2.</span> <span class="nav-text">文件操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux配置"><span class="nav-number">1.2.</span> <span class="nav-text">Linux配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置Linux的IP地址"><span class="nav-number">1.2.1.</span> <span class="nav-text">设置Linux的IP地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作技巧"><span class="nav-number">1.2.2.</span> <span class="nav-text">操作技巧</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux命令"><span class="nav-number">1.3.</span> <span class="nav-text">Linux命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查阅命令帮助信息"><span class="nav-number">1.3.1.</span> <span class="nav-text">查阅命令帮助信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件处理命令"><span class="nav-number">1.3.2.</span> <span class="nav-text">文件处理命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#权限管理命令"><span class="nav-number">1.3.3.</span> <span class="nav-text">权限管理命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令名称：-chmod"><span class="nav-number">1.3.4.</span> <span class="nav-text">命令名称： chmod</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改变所有者命令-chown"><span class="nav-number">1.3.5.</span> <span class="nav-text">改变所有者命令 chown</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改变文件所有组-chgrp"><span class="nav-number">1.3.6.</span> <span class="nav-text">改变文件所有组 chgrp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置新建文件的缺省权限-umask"><span class="nav-number">1.3.7.</span> <span class="nav-text">设置新建文件的缺省权限 umask</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">1.4.</span> <span class="nav-text">注意事项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目录："><span class="nav-number">1.4.1.</span> <span class="nav-text">目录：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器："><span class="nav-number">1.4.2.</span> <span class="nav-text">服务器：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他："><span class="nav-number">1.4.3.</span> <span class="nav-text">其他：</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LINUX-初探"><span class="nav-number">1.</span> <span class="nav-text">LINUX 初探</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识概念"><span class="nav-number">1.1.</span> <span class="nav-text">知识概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络概述"><span class="nav-number">1.1.1.</span> <span class="nav-text">网络概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP-地址"><span class="nav-number">1.1.2.</span> <span class="nav-text">IP 地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS"><span class="nav-number">1.1.3.</span> <span class="nav-text">DNS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#端口-Port"><span class="nav-number">1.1.4.</span> <span class="nav-text">端口(Port)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.2.</span> <span class="nav-text">**</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件与用户的关系"><span class="nav-number">1.2.1.</span> <span class="nav-text">文件与用户的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件操作"><span class="nav-number">1.2.2.</span> <span class="nav-text">文件操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux配置"><span class="nav-number">1.3.</span> <span class="nav-text">Linux配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置Linux的IP地址"><span class="nav-number">1.3.1.</span> <span class="nav-text">设置Linux的IP地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作技巧"><span class="nav-number">1.3.2.</span> <span class="nav-text">操作技巧</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux命令"><span class="nav-number">1.4.</span> <span class="nav-text">Linux命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查阅命令帮助信息"><span class="nav-number">1.4.1.</span> <span class="nav-text">查阅命令帮助信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件处理命令"><span class="nav-number">1.4.2.</span> <span class="nav-text">文件处理命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#权限管理命令"><span class="nav-number">1.4.3.</span> <span class="nav-text">权限管理命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令名称：-chmod"><span class="nav-number">1.4.4.</span> <span class="nav-text">命令名称： chmod</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改变所有者命令-chown"><span class="nav-number">1.4.5.</span> <span class="nav-text">改变所有者命令 chown</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改变文件所有组-chgrp"><span class="nav-number">1.4.6.</span> <span class="nav-text">改变文件所有组 chgrp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置新建文件的缺省权限-umask"><span class="nav-number">1.4.7.</span> <span class="nav-text">设置新建文件的缺省权限 umask</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件搜索命令"><span class="nav-number">1.5.</span> <span class="nav-text">文件搜索命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件搜索命令-find"><span class="nav-number">1.5.1.</span> <span class="nav-text">文件搜索命令 find</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件搜索命令-locate"><span class="nav-number">1.5.2.</span> <span class="nav-text">文件搜索命令 locate</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">注意</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件搜索命令-which"><span class="nav-number">1.5.3.</span> <span class="nav-text">文件搜索命令 which</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件搜索命令-whereis"><span class="nav-number">1.5.4.</span> <span class="nav-text">文件搜索命令 whereis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件搜索命令-grep"><span class="nav-number">1.5.5.</span> <span class="nav-text">文件搜索命令 grep</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">1.6.</span> <span class="nav-text">注意事项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目录："><span class="nav-number">1.6.1.</span> <span class="nav-text">目录：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器："><span class="nav-number">1.6.2.</span> <span class="nav-text">服务器：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他："><span class="nav-number">1.6.3.</span> <span class="nav-text">其他：</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1230,7 +1450,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共10.9k字</span>
+  <span class="post-count">博客全站共17.3k字</span>
 </div>
         
 <div class="busuanzi-count">

@@ -123,7 +123,7 @@
 <meta property="og:site_name" content="Weclome Back">
 <meta property="og:description" content="函数式编程">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-26T14:27:01.908Z">
+<meta property="og:updated_time" content="2018-07-11T15:02:41.065Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python进阶">
 <meta name="twitter:description" content="函数式编程">
@@ -400,7 +400,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-06-26 22:27:01" itemprop="dateModified" datetime="2018-06-26T22:27:01+08:00">2018-06-26</time>
+                <time title="修改时间：2018-07-11 23:02:41" itemprop="dateModified" datetime="2018-07-11T23:02:41+08:00">2018-07-11</time>
               
             
           </span>
@@ -525,6 +525,7 @@
 <li>举例<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">funA</span><span class="params">(n)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> n * <span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">funB</span><span class="params">(n)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> funA(n) * <span class="number">3</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<hr>
 <h3 id="map函数"><a href="#map函数" class="headerlink" title="map函数"></a>map函数</h3><ul>
 <li>对队列里的每个元素进行操作，即映射操作</li>
 <li>map函数是系统提供的具有映射功能的函数，返回值是一个<strong>迭代对象</strong>,类型为<strong>map类</strong><ul>
@@ -534,6 +535,7 @@
 <li>格式： <code>map(func, *iterables)</code></li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># map举例</span></span><br><span class="line"><span class="comment"># 列表里的每个元素都乘以10</span></span><br><span class="line"></span><br><span class="line">l1 = [ i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>)]</span><br><span class="line">print(l1)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> li:</span><br><span class="line">    l2.append(i*<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用map来实现</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">multen</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> n*<span class="number">10</span></span><br><span class="line"></span><br><span class="line">l2 = map(multen, l1 )  <span class="comment"># multen函数作为map函数的一个参数</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> l2:</span><br><span class="line">    print(l2)</span><br></pre></td></tr></table></figure>
+<hr>
 <h3 id="reduce函数"><a href="#reduce函数" class="headerlink" title="reduce函数"></a>reduce函数</h3><ul>
 <li>作用： 归并，缩减 ，把可迭代对象最后归并为一个结果</li>
 <li>作为参数的函数要求： <ul>
@@ -545,6 +547,43 @@
 <li>注意： reduce需要导入functools包</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义一个操作函数</span></span><br><span class="line"><span class="comment"># 加入操作函数来相加</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(x,y)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> x + y</span><br><span class="line"></span><br><span class="line"><span class="comment">## 对列表[1,2,3]执行add的reduce操作</span></span><br><span class="line"></span><br><span class="line">rst = reduce(add, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">print(rst)</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="filter-函数"><a href="#filter-函数" class="headerlink" title="filter 函数"></a>filter 函数</h3><blockquote>
+<p>过滤函数：对一组数据进行过滤，符合条件的数据会产生一个<strong>新的列表</strong>返回</p>
+</blockquote>
+<p>与map函数比较</p>
+<ul>
+<li>相同 ： <ul>
+<li>都对列表的每个元素逐一进行操作</li>
+</ul>
+</li>
+<li><p>不同 ：</p>
+<ul>
+<li>map 会生成一个跟原来数据相对应的新队列</li>
+<li>filter 不一定，<strong>只有符合条件</strong>的才会进入新队列</li>
+</ul>
+</li>
+<li><p>filter函数写法</p>
+<ul>
+<li>利用给定函数进行判断</li>
+<li>返回值为一个<strong>布尔值</strong></li>
+<li>调用格式 ： filter(f,data)   f 为过滤函数  data 为数据</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 案例 过滤偶数数据形成新列表</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isEven</span><span class="params">(a)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a%<span class="number">2</span> ==<span class="number">0</span></span><br><span class="line"></span><br><span class="line">list = [<span class="number">3</span>,<span class="number">4</span>,<span class="number">56</span>,<span class="number">3</span>,<span class="number">455</span>,<span class="number">67</span>,<span class="number">4</span>,<span class="number">4</span>]</span><br><span class="line"></span><br><span class="line">rst = filter(isEven, l)</span><br><span class="line"></span><br><span class="line">print([i <span class="keyword">for</span> i <span class="keyword">in</span> rst])</span><br></pre></td></tr></table></figure>
+<font color="orange"><strong>注意事项</strong></font>
+
+<ul>
+<li>返回的filter内容是一个<strong>可迭代对象</strong>,需要逐个输出</li>
+</ul>
+<hr>
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><ul>
+<li>把一个序列按照<strong>给定算法</strong>进行排序</li>
+<li>key : 在排序前，对每一个元素进行 key 函数运算，可理解为按照<strong> key 函数定义的逻辑</strong>进行排序 (key函数为排序函数的内嵌参数)</li>
+<li>python2 python3 的差别较大</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 排序案例1</span></span><br><span class="line"></span><br><span class="line">a = [<span class="number">21</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">456</span>,<span class="number">45</span>,<span class="number">66</span>]</span><br><span class="line">al = sorted(a, reverse=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (al)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 排序案例2</span></span><br><span class="line"></span><br><span class="line">a = [<span class="number">4.</span><span class="number">-45.457</span><span class="number">.74</span><span class="number">.7</span><span class="number">.5</span>]</span><br><span class="line"><span class="comment"># 按照数据的绝对值进行排序 </span></span><br><span class="line"><span class="comment"># abs 为求绝对值的函数</span></span><br><span class="line"></span><br><span class="line">al = sorted(a, key=abs, reverse=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (al)</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -617,8 +656,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/24/HTML/" rel="prev" title="前端深似海">
-                前端深似海 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/24/HTML/" rel="prev" title="前端深似海-HTML">
+                前端深似海-HTML <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -726,7 +765,7 @@ var jiathis_config={
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -782,7 +821,11 @@ var jiathis_config={
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -834,7 +877,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#函数式编程"><span class="nav-number">1.</span> <span class="nav-text">函数式编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原则"><span class="nav-number">1.1.</span> <span class="nav-text">原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内容"><span class="nav-number">1.2.</span> <span class="nav-text">内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#装饰器"><span class="nav-number">1.2.1.</span> <span class="nav-text">装饰器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#参数传递"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">参数传递</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题-装饰具有处理n个参数的函数的装饰器？"><span class="nav-number">1.2.1.1.1.</span> <span class="nav-text">问题: 装饰具有处理n个参数的函数的装饰器？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问题：一个函数可以被多个装饰器装饰吗？"><span class="nav-number">1.2.1.1.2.</span> <span class="nav-text">问题：一个函数可以被多个装饰器装饰吗？</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lambda函数（匿名函数）"><span class="nav-number">1.3.</span> <span class="nav-text">Lambda函数（匿名函数）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高阶函数"><span class="nav-number">1.4.</span> <span class="nav-text">高阶函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#map函数"><span class="nav-number">1.4.1.</span> <span class="nav-text">map函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduce函数"><span class="nav-number">1.4.2.</span> <span class="nav-text">reduce函数</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#函数式编程"><span class="nav-number">1.</span> <span class="nav-text">函数式编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原则"><span class="nav-number">1.1.</span> <span class="nav-text">原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内容"><span class="nav-number">1.2.</span> <span class="nav-text">内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#装饰器"><span class="nav-number">1.2.1.</span> <span class="nav-text">装饰器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#参数传递"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">参数传递</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题-装饰具有处理n个参数的函数的装饰器？"><span class="nav-number">1.2.1.1.1.</span> <span class="nav-text">问题: 装饰具有处理n个参数的函数的装饰器？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问题：一个函数可以被多个装饰器装饰吗？"><span class="nav-number">1.2.1.1.2.</span> <span class="nav-text">问题：一个函数可以被多个装饰器装饰吗？</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lambda函数（匿名函数）"><span class="nav-number">1.3.</span> <span class="nav-text">Lambda函数（匿名函数）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高阶函数"><span class="nav-number">1.4.</span> <span class="nav-text">高阶函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#map函数"><span class="nav-number">1.4.1.</span> <span class="nav-text">map函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduce函数"><span class="nav-number">1.4.2.</span> <span class="nav-text">reduce函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter-函数"><span class="nav-number">1.4.3.</span> <span class="nav-text">filter 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序"><span class="nav-number">1.4.4.</span> <span class="nav-text">排序</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -883,7 +926,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共10.9k字</span>
+  <span class="post-count">博客全站共17.3k字</span>
 </div>
         
 <div class="busuanzi-count">
