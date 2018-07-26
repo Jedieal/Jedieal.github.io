@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="大数据">
+<meta name="keywords" content="Python大数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Big_Data">
+<meta property="og:url" content="http://yoursite.com/2018/07/20/大数据/Big-Data/index.html">
+<meta property="og:site_name" content="Weclome Back">
+<meta property="og:description" content="大数据">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://nim.nosdn.127.net/NDA3MzIzNw%3D%3D%2FbmltYV8xNzIyMDY5MDgzXzE1MzI0MzcwMjMxMDlfY2IxMTc4ZTItYzA3Mi00NTVlLTk0ZjctMDI4OGNiNTllNTcx">
+<meta property="og:image" content="https://nim.nosdn.127.net/NDA3MzIzNw%3D%3D%2FbmltYV8xNzIyMDY5MDgzXzE1MzI0MzcwMjMxMDlfMWNkZDBjNTktZTkyOS00ZWM0LWE0NGEtNDdkNDA2MmI5Mjg1">
+<meta property="og:image" content="https://nim.nosdn.127.net/NDA3MzIzNw%3D%3D%2FbmltYV8xNzIyMDY5MDgzXzE1MzI0MzcwMjMxMDlfZTllZTk3MWMtZWY5MC00NDk5LWE3YmItOGVkMGM0NWQ3Njg3">
+<meta property="og:image" content="https://nim.nosdn.127.net/NDA3MzIzNw%3D%3D%2FbmltYV8xNzIyMDY5MDgzXzE1MzI0MzcwMjMxMDlfYjlhZGZmYmEtZTZjOS00OTU5LWI1MzEtOTliNGU3NzViMzQ3">
+<meta property="og:image" content="https://nim.nosdn.127.net/NDA3MzIzNw%3D%3D%2FbmltYV8xNzIyMDY5MDgzXzE1MzI0MzcwMjMxMTBfOWI5YTk4Y2EtZmRmMS00ZjNiLWIxNWItZDcyODgzOWRlZmQ2">
+<meta property="og:updated_time" content="2018-07-25T15:18:50.403Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Big_Data">
+<meta name="twitter:description" content="大数据">
+<meta name="twitter:image" content="https://nim.nosdn.127.net/NDA3MzIzNw%3D%3D%2FbmltYV8xNzIyMDY5MDgzXzE1MzI0MzcwMjMxMDlfY2IxMTc4ZTItYzA3Mi00NTVlLTk0ZjctMDI4OGNiNTllNTcx">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Weclome Back" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/20/大数据/Big-Data/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Big_Data | Weclome Back</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/Jedieal"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png" alt="Fork me on GitHub"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Weclome Back</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Keithxodoy</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/20/大数据/Big-Data/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Keithxodoy">
+      <meta itemprop="description" content="The trouble with the world is that the stupid are sure and the  intelligent are full of doubt.">
+      <meta itemprop="image" content="http://yp.wzcn.cc/wp-content/uploads/2018/04/489994cf68f729dc400x400_big.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Weclome Back">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Big_Data
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-20 15:36:09" itemprop="dateCreated datePublished" datetime="2018-07-20T15:36:09+08:00">2018-07-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-07-25 23:18:50" itemprop="dateModified" datetime="2018-07-25T23:18:50+08:00">2018-07-25</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/20/大数据/Big-Data/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/07/20/大数据/Big-Data/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+      <div>
+        
+        
+      </div>
+      
+        <h1 id="大数据"><a href="#大数据" class="headerlink" title="大数据"></a>大数据</h1><a id="more"></a>
+<h2 id="搭配LINUX环境"><a href="#搭配LINUX环境" class="headerlink" title="搭配LINUX环境"></a>搭配LINUX环境</h2><ol>
+<li>创建 /usr/local/hadoop 文件夹</li>
+<li>下载hadoop，并解压</li>
+<li>安装 JDK 环境</li>
+<li>生成无密公钥 <code>ssh-keygen -t dsa -P &#39;&#39; -f ~/.ssh/id_dsa</code> </li>
+<li>将公钥id_dsa.pub 添加进keys ,保证无密码登录<code>cat ~/.ssh/id_dsa.pub &gt;&gt; ~/.ssh/authorized_keys</code> </li>
+<li>验证是否成功 ： <code>ssh localhost</code> (第一次登录有询问)</li>
+</ol>
+<p><strong>解释</strong></p>
+<ul>
+<li>dsa 为生成的密钥类型 </li>
+<li>-P 为密码 </li>
+<li>‘’ 表示无密码 </li>
+<li>-f 后面为生成要保存的位置</li>
+</ul>
+<hr>
+<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itstar.util;</span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * 大数据文件批量检索(豆瓣电影影评)数据抓取核心工具类</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> v1.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DataDownUtil</span> </span>&#123;</span><br><span class="line">    <span class="comment">// java 入口</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(Sring[] args)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"java爬虫"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 1. 根据网址和页面的编码集获取网页的源代码</span></span><br><span class="line"><span class="comment">// 2. 解析源代码，批量采集我们需要的影评数据</span></span><br><span class="line"><span class="comment">// 3. 将文字信息转换成文本文件，储存在服务器中</span></span><br><span class="line"><span class="comment">// 4. 同步到分布式文件系统中</span></span><br><span class="line"><span class="comment">// 5. 计算、处理、可视化</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getHtmlResource</span><span class="params">(String url, String encoding)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 建立网络链接</span></span><br><span class="line">    URL urlObj = <span class="keyword">new</span> URL(url);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="数据概念"><a href="#数据概念" class="headerlink" title="数据概念"></a>数据概念</h2><p>大数据是由结构化和非结构化数据组成的</p>
+<ul>
+<li>10%的结构化数据，储存在数据库中</li>
+<li>90%的非结构化数据，它们与人类信息密切相关</li>
+</ul>
+<hr>
+<h2 id="HDFS的底层原理：代理对象与RPC"><a href="#HDFS的底层原理：代理对象与RPC" class="headerlink" title="HDFS的底层原理：代理对象与RPC"></a>HDFS的底层原理：代理对象与RPC</h2><h3 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h3><h4 id="什么是Hive？"><a href="#什么是Hive？" class="headerlink" title="什么是Hive？"></a>什么是Hive？</h4><p><strong>Hadoop : 大数据的第一个框架</strong></p>
+<table>
+<thead>
+<tr>
+<th>框架</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HDFS</td>
+<td>存储</td>
+</tr>
+<tr>
+<td>MapReduce</td>
+<td>计算</td>
+</tr>
+<tr>
+<td>YARN</td>
+<td>调度</td>
+</tr>
+</tbody>
+</table>
+<p><strong>解释</strong> ： Hive 是基于 Hadoop 的一个数据仓库工具，可以将结构化(行对行、列对列)的数据文件映射为一张表，并提供一种类SQL(HQL)的功能</p>
+<ul>
+<li>优缺点<ul>
+<li>优点<ul>
+<li>提供了SQL的查询，提供快速开发的能力</li>
+<li>避免了去写 MR(MapReduce)，减少开发人员成本</li>
+<li>底层实现是 MR</li>
+<li>适合处理大数据量，对于小数据量没有优势，延迟高</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>数据挖掘领域不擅长</li>
+<li>效率相对较低，MR 不够智能</li>
+<li>调优比较困难</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Hive-的架构原理"><a href="#Hive-的架构原理" class="headerlink" title="Hive 的架构原理"></a>Hive 的架构原理</h4><p><strong>Hive 原理架构</strong></p>
+<p><img src="https://nim.nosdn.127.net/NDA3MzIzNw%3D%3D%2FbmltYV8xNzIyMDY5MDgzXzE1MzI0MzcwMjMxMDlfY2IxMTc4ZTItYzA3Mi00NTVlLTk0ZjctMDI4OGNiNTllNTcx" alt="img"></p>
+<ol>
+<li>Meta store ==&gt; derby | mysql</li>
+<li>Driver : 解析器 、 编译器 、 优化器 、 执行器 </li>
+<li>MapReduce</li>
+<li>HDFS </li>
+</ol>
+<h4 id="Hive-与数据库比较"><a href="#Hive-与数据库比较" class="headerlink" title="Hive 与数据库比较"></a>Hive 与数据库比较</h4><ul>
+<li><p>查询语言</p>
+<ul>
+<li>HQL 与 SQL 、 自定义函数 (UDF、UDAF、UDFF)</li>
+</ul>
+</li>
+<li><p>数据的储存位置</p>
+<ul>
+<li>Hive 存在HDFS 中</li>
+<li>数据库： 本地文件系统中、块设备</li>
+</ul>
+</li>
+<li>数据更新<ul>
+<li>Hive 内容 读多写少</li>
+<li>数据库： 增删改查</li>
+</ul>
+</li>
+<li>执行 和 执行延迟</li>
+<li>扩展性<ul>
+<li>Hive 比 Mysql 强</li>
+</ul>
+</li>
+</ul>
+<h4 id="Hive-的数据类型"><a href="#Hive-的数据类型" class="headerlink" title="Hive 的数据类型"></a>Hive 的数据类型</h4><ul>
+<li>基本数据类型</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Hive 的数据类型</th>
+<th>Java 数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tinyint</td>
+<td>byte</td>
+</tr>
+<tr>
+<td>SMALINT</td>
+<td>short</td>
+</tr>
+<tr>
+<td>INT</td>
+<td>int</td>
+</tr>
+<tr>
+<td>BIGINT</td>
+<td>long</td>
+</tr>
+<tr>
+<td>BOOLEAN</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>FLOAT</td>
+<td>float</td>
+</tr>
+<tr>
+<td>DOUBLE</td>
+<td>double</td>
+</tr>
+<tr>
+<td>STRING</td>
+<td>string</td>
+</tr>
+<tr>
+<td>TIMESTAMP</td>
+<td>时间类型</td>
+</tr>
+<tr>
+<td>BINARY</td>
+<td>字节数组</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>集合数据类型</li>
+</ul>
+<p>STRUCT 、 MAP 、 ARRAY</p>
+<ul>
+<li>类型转换</li>
+</ul>
+<p>和 Java 的类型转换一致，如果是 低 -&gt; 高 自动转</p>
+<h4 id="DDL数据定义与DML数据操作"><a href="#DDL数据定义与DML数据操作" class="headerlink" title="DDL数据定义与DML数据操作"></a>DDL数据定义与DML数据操作</h4><h5 id="小范例"><a href="#小范例" class="headerlink" title="小范例"></a>小范例</h5><p><img src="https://nim.nosdn.127.net/NDA3MzIzNw%3D%3D%2FbmltYV8xNzIyMDY5MDgzXzE1MzI0MzcwMjMxMDlfMWNkZDBjNTktZTkyOS00ZWM0LWE0NGEtNDdkNDA2MmI5Mjg1" alt="img"></p>
+<p><img src="https://nim.nosdn.127.net/NDA3MzIzNw%3D%3D%2FbmltYV8xNzIyMDY5MDgzXzE1MzI0MzcwMjMxMDlfZTllZTk3MWMtZWY5MC00NDk5LWE3YmItOGVkMGM0NWQ3Njg3" alt="img"></p>
+<blockquote>
+<p>MAP : kv 结构</p>
+</blockquote>
+<blockquote>
+<p>STRUCT : 不单单只是类型，而且还有类型名</p>
+</blockquote>
+<p><strong>建表语句： Json 格式</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">create table <span class="title">test</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">    name string,</span></span></span><br><span class="line"><span class="function"><span class="params">    friends array&lt;string&gt;,</span></span></span><br><span class="line"><span class="function"><span class="params">    children map&lt;string, <span class="keyword">int</span>&gt;,</span></span></span><br><span class="line"><span class="function"><span class="params">    address struct&lt;street:string, city:string&gt;</span></span></span><br><span class="line"><span class="function"><span class="params">)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">row format delimited fields terminated by ","   -- 列分隔符</span></span><br><span class="line"><span class="function">collection items terminated by "_"              -- MAP STRUCT 和 ARRAY 的分隔符</span></span><br><span class="line"><span class="function">map keys terminated by ":"                      -- MAP 中的 key 和 value 的分隔符</span></span><br><span class="line"><span class="function">lines terminated by "n"</span>;                        --行分隔符</span><br></pre></td></tr></table></figure>
+<p><img src="https://nim.nosdn.127.net/NDA3MzIzNw%3D%3D%2FbmltYV8xNzIyMDY5MDgzXzE1MzI0MzcwMjMxMDlfYjlhZGZmYmEtZTZjOS00OTU5LWI1MzEtOTliNGU3NzViMzQ3" alt="img"></p>
+<hr>
+<h5 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h5><p><strong>1. 创建数据库：</strong> create database if not exists db_hive; // 默认路径： /user/hive/warehouse</p>
+<pre><code>create database if no exists jedieal location &apos;/jedieal.db&apos;;  // 使用 location 指定路径
+</code></pre><p><strong>2. 修改数据库：</strong> alter database jedieal set dbproperties(‘create’=’20180724’);  // 加上创建时间，即自定义的<strong>元数据</strong>(记录了数据的相关信息)</p>
+<pre><code>desc database extended jedieal;
+</code></pre><p><strong>3. 查询数据库：</strong> show database;<br>            show database like ‘db_hive*’;</p>
+<p><strong>4. 删除数据库：</strong> drop database db_hive;</p>
+<p><strong>5. 创建数据表：</strong></p>
+<ul>
+<li>普通创建表<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">create table <span class="keyword">if</span> not exists <span class="title">student</span> <span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">id <span class="keyword">int</span>, name string</span></span></span><br><span class="line"><span class="function"><span class="params">)</span></span></span><br><span class="line"><span class="function">row format delimited fields terminated by '\t'</span></span><br><span class="line"><span class="function">stored as textfile</span></span><br><span class="line"><span class="function">location '/user/hive/warehouse/student'</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>根据查询结果创建表 (查询的结果会添加搭配新建的表中)</p>
+<pre><code>`create table if not exists student as select id, name from student;`
+</code></pre></li>
+<li><p>根据已经存在的表结构创建表</p>
+<p>  <code>create table if not exists emp like emp1;</code></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Table Type</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MANAGED_TABLE</td>
+<td>内部表</td>
+</tr>
+<tr>
+<td>EXTERNAL_TABLE</td>
+<td>外部表</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>外部表与内部表的区别：</strong></p>
+<ul>
+<li>删内 ： 会把表结构和表里的数据都删除</li>
+<li>删外 ： 只会删除表结构、不会删除表数据</li>
+<li>drop table 表名;</li>
+</ul>
+<p><strong>6. 分区数据表：</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">create external table <span class="title">dept_partition_external</span> <span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">deptno <span class="keyword">int</span>, dname string, loc string</span></span></span><br><span class="line"><span class="function"><span class="params">)</span></span></span><br><span class="line"><span class="function">partitioned <span class="title">by</span> <span class="params">(month string)</span></span></span><br><span class="line"><span class="function">row format delimited fields terminated by '\t'</span>;</span><br></pre></td></tr></table></figure></p>
+<p><strong>分区及分文件夹</strong></p>
+<p><strong>分桶及文件</strong></p>
+<ul>
+<li><p><strong>修改数据表：</strong></p>
+</li>
+<li><p><strong>删除数据表：</strong></p>
+</li>
+</ul>
+<h4 id="企业级优化"><a href="#企业级优化" class="headerlink" title="企业级优化"></a>企业级优化</h4><h5 id="Fetch-抓"><a href="#Fetch-抓" class="headerlink" title="Fetch 抓"></a>Fetch 抓</h5><p><code>/hive.fetch.task</code></p>
+<p><img src="https://nim.nosdn.127.net/NDA3MzIzNw%3D%3D%2FbmltYV8xNzIyMDY5MDgzXzE1MzI0MzcwMjMxMTBfOWI5YTk4Y2EtZmRmMS00ZjNiLWIxNWItZDcyODgzOWRlZmQ2" alt="img"></p>
+<p><strong>三个：</strong></p>
+<ul>
+<li>more<ul>
+<li>minimal</li>
+<li>none<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set hive.fetch.task.conversion=none;</span><br><span class="line"></span><br><span class="line">set hive.fetch.task.conversion=more;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="本地模式"><a href="#本地模式" class="headerlink" title="本地模式"></a>本地模式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#开启本地 MR</span><br><span class="line">set hive.exec.mode.local.auto=<span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">#设置文件大小的最大值</span><br><span class="line">set hive.exec.mode.local.auto.inputbytes.max=<span class="number">50000000</span>;</span><br><span class="line"></span><br><span class="line">#文件个数</span><br><span class="line">set hive.exec.mode.local.auto.input.files.max=<span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>查询分桶表：</strong><br><code>select * from emp cluster by deptno;</code></p>
+<h4 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select * from emp;</span><br><span class="line"></span><br><span class="line">set hive.mapred.mode = nonstrict (默认)</span><br><span class="line">select * from ori_partitioned_target where p_time = <span class="string">'20111230000010'</span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="SQL操作"><a href="#SQL操作" class="headerlink" title="SQL操作"></a>SQL操作</h2><p><code>select * from db  where ;</code> : 从 db 中查看所有数据, where 为条件查询</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>喜欢的可以对我打赏了哟~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Keithxodoy 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="Keithxodoy 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python大数据/" rel="tag"><i class="fa fa-google"></i> Python大数据</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/12/前端/CSS学习/" rel="next" title="CSS学习">
+                <i class="fa fa-chevron-left"></i> CSS学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/21/Hacker/Hacker-Techo/" rel="prev" title="Hacker_Techo">
+                Hacker_Techo <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://yp.wzcn.cc/wp-content/uploads/2018/04/489994cf68f729dc400x400_big.jpg"
+                alt="Keithxodoy" />
+            
+              <p class="site-author-name" itemprop="name">Keithxodoy</p>
+              <p class="site-description motion-element" itemprop="description">The trouble with the world is that the stupid are sure and the  intelligent are full of doubt.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Jedieal" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#大数据"><span class="nav-number">1.</span> <span class="nav-text">大数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#搭配LINUX环境"><span class="nav-number">1.1.</span> <span class="nav-text">搭配LINUX环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java"><span class="nav-number">1.2.</span> <span class="nav-text">Java</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据概念"><span class="nav-number">1.3.</span> <span class="nav-text">数据概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HDFS的底层原理：代理对象与RPC"><span class="nav-number">1.4.</span> <span class="nav-text">HDFS的底层原理：代理对象与RPC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive"><span class="nav-number">1.4.1.</span> <span class="nav-text">Hive</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是Hive？"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">什么是Hive？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hive-的架构原理"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">Hive 的架构原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hive-与数据库比较"><span class="nav-number">1.4.1.3.</span> <span class="nav-text">Hive 与数据库比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hive-的数据类型"><span class="nav-number">1.4.1.4.</span> <span class="nav-text">Hive 的数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DDL数据定义与DML数据操作"><span class="nav-number">1.4.1.5.</span> <span class="nav-text">DDL数据定义与DML数据操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#小范例"><span class="nav-number">1.4.1.5.1.</span> <span class="nav-text">小范例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据操作"><span class="nav-number">1.4.1.5.2.</span> <span class="nav-text">数据操作</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#企业级优化"><span class="nav-number">1.4.1.6.</span> <span class="nav-text">企业级优化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Fetch-抓"><span class="nav-number">1.4.1.6.1.</span> <span class="nav-text">Fetch 抓</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地模式"><span class="nav-number">1.4.1.7.</span> <span class="nav-text">本地模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#严格模式"><span class="nav-number">1.4.1.8.</span> <span class="nav-text">严格模式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL操作"><span class="nav-number">1.5.</span> <span class="nav-text">SQL操作</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Keithxodoy</span>
+
+  
+
+  
+</div>
+
+
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a> v6.3.0</div>
+-->
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共46.4k字</span>
+</div>
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'X5gVrHkkd6SlqAAJLsxK8cWw-gzGzoHsz',
+        appKey: '8TlInhbKia6LM1d5ozLTBzCb',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
