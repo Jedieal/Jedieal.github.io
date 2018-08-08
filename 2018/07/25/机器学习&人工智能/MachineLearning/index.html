@@ -123,10 +123,15 @@
 <meta property="og:site_name" content="Weclome Back">
 <meta property="og:description" content="机器学习">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-25T15:00:51.381Z">
+<meta property="og:image" content="https://segmentfault.com/img/bVFL0Y?w=429&h=133">
+<meta property="og:image" content="https://steveli90.github.io/images/reg/2.PNG">
+<meta property="og:image" content="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D99/sign=a46bd6f1dd33c895a27e9472d01340df/0df3d7ca7bcb0a4659502a5f6f63f6246b60af62.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Error_Function.svg/480px-Error_Function.svg.png">
+<meta property="og:updated_time" content="2018-08-08T03:33:28.713Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Machine_Learning">
 <meta name="twitter:description" content="机器学习">
+<meta name="twitter:image" content="https://segmentfault.com/img/bVFL0Y?w=429&h=133">
 
 
 
@@ -383,12 +388,24 @@
                 
               
 
-              <time title="创建时间：2018-07-25 20:54:22 / 修改时间：23:00:51" itemprop="dateCreated datePublished" datetime="2018-07-25T20:54:22+08:00">2018-07-25</time>
+              <time title="创建时间：2018-07-25 20:54:22" itemprop="dateCreated datePublished" datetime="2018-07-25T20:54:22+08:00">2018-07-25</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-08 11:33:28" itemprop="dateModified" datetime="2018-08-08T11:33:28+08:00">2018-08-08</time>
               
             
           </span>
@@ -494,6 +511,81 @@
 <h3 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h3><p>特点：无类别信息，也不会给定目标值</p>
 <p>聚类<br>: 将数据集合分成由<strong>类似的对象</strong>组成的多个类的过程</p>
 <p>密度估计<br>: 将寻找<strong>描述数据统计值</strong>的过程</p>
+<hr>
+<h2 id="Day-1"><a href="#Day-1" class="headerlink" title="Day_1"></a>Day_1</h2><h3 id="步骤一-——-导入必需数据科学库"><a href="#步骤一-——-导入必需数据科学库" class="headerlink" title="步骤一 —— 导入必需数据科学库"></a>步骤一 —— 导入必需数据科学库</h3><blockquote>
+<p>在进行数据分析，需要两个必须常用库 —— pandas 、 Numpy</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br></pre></td></tr></table></figure>
+<h3 id="步骤二-——-设置工作目录，导入数据集"><a href="#步骤二-——-设置工作目录，导入数据集" class="headerlink" title="步骤二 —— 设置工作目录，导入数据集"></a>步骤二 —— 设置工作目录，导入数据集</h3><p>数据集一般为<code>.csv</code>格式，且通常为表格形式。每一行都有对应的数据记录。每一个数据集都会包括两部分，独立变量（independent variable）和依赖变量（dependent variable)。</p>
+<p>我们使用<code>pandas</code>中的<code>read_csv</code>的方式来读取数据集的内容，然后可以在Dataframe中分离矩阵和相关和不相关的向量</p>
+<p>数据科学中很重要的一点就是建立metrics（度量，指标）。每一列都可以是一个metric。</p>
+<p>而metrics主要包括两部分：independent variable 和 dependent variable。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">getwd()</span><br><span class="line">setwd(<span class="string">"/working directory"</span>)</span><br><span class="line">dataset = pd.read_csv(filepath_or_buffer=<span class="string">" "</span>)</span><br><span class="line"><span class="comment"># create 独立变量vector</span></span><br><span class="line">X = dataset.iloc[ : , : <span class="number">-1</span>].values <span class="comment"># 除了最后一列全是自变量</span></span><br><span class="line"><span class="comment"># create 依赖变量vecto</span></span><br><span class="line">Y = dataset.iloc[ : , <span class="number">3</span>].values  <span class="comment"># 最后一列作为应变量</span></span><br><span class="line">View(dataset)</span><br></pre></td></tr></table></figure>
+<font color="orange"><strong>解释</strong></font>
+
+<ul>
+<li><code>iloc</code>表示取数据集中的某些行和某些列</li>
+<li>逗号前表示行，逗号后表示列</li>
+<li>这里表示取所有行，列取除了最后一列的所有列，因为列是应变量</li>
+</ul>
+<p>机器学习的目的就是需要通过独立变量来预测非独立变量（prediction）。独立变量不会被影响而非独立变量可能被独立变量影响。</p>
+<h3 id="步骤三-——-缺失值处理"><a href="#步骤三-——-缺失值处理" class="headerlink" title="步骤三 —— 缺失值处理"></a>步骤三 —— 缺失值处理</h3><p>关于缺失值（missing value）的处理，在<code>sklearn</code>的<code>preprocessing</code>包中包含了对数据集中缺失值的处理，主要是应用<code>Imputer</code>类进行处理</p>
+<p>进行处理的数据集中包含缺失值一般步骤如下：</p>
+<ol>
+<li>使用字符串’nan’来代替数据集中的缺失值；</li>
+<li>将该数据集转换为浮点型便可以得到包含np.nan的数据集；</li>
+<li>使用sklearn.preprocessing.Imputer类来处理使用np.nan对缺失值进行编码过的</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> Imputer</span><br><span class="line">imputer = Imputer(missing_values= <span class="string">"NaN"</span>, strategy= <span class="string">"mean"</span>, axis= <span class="number">0</span>)</span><br><span class="line">imputer = imputer.fit(X[ : , <span class="number">1</span>: <span class="number">3</span>])   <span class="comment"># (inclusive column 1, exclusive column 3, means col 1 &amp; 2)</span></span><br><span class="line">X[ : , <span class="number">1</span>: <span class="number">3</span>] = imputer.transform(X[ : , <span class="number">1</span>: <span class="number">3</span>]) <span class="comment"># 将imputer 应用到数据</span></span><br></pre></td></tr></table></figure>
+<font color="orange"><strong>注意</strong></font>在data science中我们可以用NaN代替空值，但是在ML中必须要求数据为numeric。所以我们可以用<code>mean</code>来代替空值。<br><br>### 步骤四 —— 分类数据编码<br>分类数据一般包含标签分类值，而不是数据值。可能的变量通常限制在固定数据集中。单纯的变量值不能在数学模型等式中使用，所以我们需要对分类数据编码成数字。<br><br>作法： 从<code>sklearn.preprocessing</code>中导入<code>LabelEncoder</code>类<br><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> LabelEncoder, OneHotEncoder</span><br><span class="line">labelencoder_X = LabelEncoder()  <span class="comment"># 标准化标签，将标签值统一转换成range(标签值个数-1)范围内</span></span><br><span class="line">X[ : , <span class="number">0</span>] = labelencoder_X.fit_transform(X[ : , <span class="number">0</span>]) <span class="comment">#不包括index行</span></span><br></pre></td></tr></table></figure><br><br>&gt;  简单来说 LabelEncoder 是对不连续的数字或者文本进行编号<br><br>再创建一个虚拟变量 (变量dummy化)<br><br>&gt; dummy variable是用0或1表示某个类别是否出现,适用于出现bool类型的结果<br><br><code>OneHotEncoder</code>用于处理分类变量，将变量的特征值转换为稀疏矩阵<br><br><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">onehotencoder = Onehotencoder(categorical_features = [<span class="number">0</span>])</span><br><span class="line">X = onehotencoder.fit_transform(X).toarray()</span><br><span class="line">labelencoder_Y = LabelEncoder() </span><br><span class="line">Y = labelencoder_Y.fit_transform(Y)</span><br></pre></td></tr></table></figure><br><br>### 步骤五 —— 将数据集分成 测试集 和 训练集<br>将数据集分为两个部分，一个训练集，另一个用来测试所建立的模型的表现。<br><br>通常分配数据比例为 80/20 。<br><br>接下来采用从<code>sklearn.model_selection</code>库中导入<code>train_test_split()</code>类<br><br><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size= <span class="number">0.2</span>, random_state= <span class="number">0</span>)</span><br></pre></td></tr></table></figure><br><br><font color="orange"><strong>注意：</strong></font>原来的cross_validation模块被弃用了，改为支持model_selection这个模块<br><br>### 步骤六 —— 特征缩放 (Feature scaling)<br><br><strong>feature scaling（特征缩放）</strong>的思想就是将所选特征的value都缩放到一个大致相似的范围<br><br>通常来说，大部分机器学习算法都采用欧氏距离来计算两地的距离。特征在不同的量级、单位、排列上的极度不同会产生问题。高量级的数据的欧式距离的计算量会很大。<br><br>由于每个变量的范围不同，如果两个变量之间差距太大，会导致距离对结果产生影响。所以我们要对数据进行一定的标准化改变。最简单的方式是将数据缩放至[0.1]或者[-1,1]之间：<br><br><img src="https://segmentfault.com/img/bVFL0Y?w=429&amp;h=133" alt="img"><br><br>为使得特征标准化或Z-score统一化，需要导入 <code>sklearn.preprocessing</code>中的<code>StandardScalar</code><br><br>代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScalar</span><br><span class="line">sc_X = StandardScalar()</span><br><span class="line">X_train = sc_X.fit_transform(X_train)</span><br><span class="line">X_test = sc_X.fit_transform(X_test)</span><br></pre></td></tr></table></figure><br><br>第一天的学习结束啦，开心😄<br><br>—-<br><br>## Day_2  简单线性回归<br>### 概述<br><em> 使用一个简单的特征来预测将来值<br><br>线性回归是一种基于非独立变量X来预测独立变量Y的方法。它假设两个变量线性相关，因此，我们需要找出X与Y的线性关系
+
+</em> 如何寻找最合适的线来拟合<br><br>在回归模型中，如果我们能够找到能使预测误差最小的线来拟合，则回归线的误差也会最小化。<br><br>我们应该试图将以观察到的值与我们预测值之间的距离最小化。<br><br>线性回归一般使用最小二乘法来求解函数模型级求解 β0 和 β1<br><br><strong>y = b<sub>o</sub> + b<sub>1</sub>*x<sub>1</sub></strong><br><br><br><br><br>###  步骤一、处理数据<br>运用第一天的五个步骤<br><br><em> Import the Libraries
+</em> Import the DataSet<br><em> Check for Missing Data
+</em> Split the DataSet<br><em> Feature Scaling<br><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">dataset = pd.read_csv(<span class="string">'studentscores.csv'</span>)</span><br><span class="line">X = dataset.iloc[ : ,   : <span class="number">1</span> ].values</span><br><span class="line">Y = dataset.iloc[ : , <span class="number">1</span> ].values</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.cross_validation <span class="keyword">import</span> train_test_split</span><br><span class="line">X_train, X_test, Y_train, Y_test = train_test_split( X, Y, test_size = <span class="number">1</span>/<span class="number">4</span>, random_state = <span class="number">0</span>)</span><br></pre></td></tr></table></figure><br><br>&gt; 使用<code>matplotlib.pyplot</code>绘制图<br><br><br><font color="orange"><strong>注意：</strong></font>这里我们没有进行特征缩放，这是因为一般Python的library会自动进行<code>feature scaling</code>，所以我们不需要自己动手<br><br>### 步骤二、训练训练集的简单线性回归模型<br>下面我们将通过训练集的X_train与y_train 计算出符合训练集的曲线<br><br>为了训练数据集，我们将使用<code>sklearn.linear_model</code>调用<code>LinearRegression</code>,使用<code>regressor</code>对象<br><br>我们将使用<code>LinearRegression</code>类，<code>fit()</code>方法将对象拟合到数据集中。<br><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line">regressor = LinearRegression()</span><br><span class="line">regressor = regressor.fit(X_train, Y_train)   <span class="comment"># 通过train集找到曲线</span></span><br></pre></td></tr></table></figure><br><br>### 步骤三、预测结果<br>我们将从训练集中预测结果,将输出保存在向量<code>Y_pred</code>.为了预测结果，我们将使用在上一步中在<code>regressor</code>中使用的<code>LinearRegression</code>类方法<br><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Y_pred = regressor.predict(X_test)</span><br></pre></td></tr></table></figure><br><br>将测试集的X_test 带入得到的曲线中，得到预测的结果y_pred，目的是为了将预测结果y_pred与测试集中的y_test进行比较，看看是否符合分布，从而确定预测是否准确<br><br>### 步骤四、数据可视化<br><br>最后一步为将我们的结果可视化。我们将使用<code>matplotlib.pyplot</code>库来制作训练集结果和测试集结果的<strong>扩散图(scatter plot)</strong>，来观察我们的模型对结果值的预测情况
+
+</em> <strong>可视化训练结果</strong><br><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">plt.scatter(X_train, Y_train, color= <span class="string">'red'</span>)</span><br><span class="line">plt.plot(X_train, regressor.predict(X_train), color= <span class="string">'blue'</span>)</span><br><span class="line">ply.title(<span class="string">" "</span>)  <span class="comment">#显示整个图标的标题</span></span><br><span class="line">plt.xlabel(<span class="string">" "</span>) <span class="comment"># 显示X坐标的标题</span></span><br><span class="line">plt.ylabel(<span class="string">" "</span>) <span class="comment"># 显示Y坐标的标题</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure><br><br>* <strong>可视化测试结果</strong><br><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Import the test results</span></span><br><span class="line">plt.scatter(X_test, Y_test, color= <span class="string">"red"</span>)</span><br><span class="line">plt.plot(X_test, regressor.predict(X_test), color= <span class="string">"blue"</span>)</span><br><span class="line">ply.title(<span class="string">" "</span>)  <span class="comment">#显示整个图标的标题</span></span><br><span class="line">plt.xlabel(<span class="string">" "</span>) <span class="comment"># 显示X坐标的标题</span></span><br><span class="line">plt.ylabel(<span class="string">" "</span>) <span class="comment"># 显示Y坐标的标题</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure><br><br><img src="https://steveli90.github.io/images/reg/2.PNG" alt="img"><br><br><br>第2️天的学习结束啦，开心😄<br><br>—<br><br>## Day_3 多重线性回归<br>### 概述<br>多重线性回归(Multiple Linear Regression)将会不只有一个自变量，并且<strong>每个自变量</strong>拥有自己的系数且符合线性回归。<br><br><br>多重线性回归试图使用两个或者以上的特征建立模型来适应观察线性数据。其实多重线性回归建立的步骤与简单线性回归相似。<br><br>你可以用它来找出哪一个因素对预测的输出有着最大的影响，以及不同的变量是如何相互关联的。<br><br><strong>y = b<sub>o</sub> + b<sub>1</sub>x<sub>1</sub> + b<sub>2</sub>x<sub>2</sub> + … + b<sub>n</sub>x<sub>n</sub></strong><br><br>### 需要满足的条件<br>1. 满足线性性(linearity) ：独立变量和非独立变量需要满足线性性<br>2. 应保持误差的同方差（常方差 Homoscedasticity）<br>3. 多元正态性(Multivariate normality)：多元回归假设残差是正态分布的<br>4. 错误的独立性(independence of errors) ：每一个变量产生的错误将会独立的影响预测结果，不会对其他变量产生影响<br>5. 缺乏多重共线性(lack of multicollinearity)：<strong>假设在数据中很少或没有多重共线性</strong>，当特征（或独立变量）<strong>彼此不独立</strong>时发生多重共线性。<br><br>### 虚拟变量<br>在回归模型中，具有固定和无序数量值的数据值,在回归预测中我们需要所有的数据都是<code>numeric</code>的，但是会有一些非<code>numeric</code>的数据，例如性别 (男/女)，这些值会被虚拟变量代替。变量包含例如 0/1的值，，来代替表示2代表分类值的存在与否<br><br><br>### 虚拟变量陷阱<br>虚拟变量陷阱是<strong>两个或多个变量高度相关</strong>的场景。<br><br>通俗来理解(intuitively)，就是一个变量必须被其余变量所预测。直观地说，有一个重复(duplicate)的范畴：如果我们放弃男性范畴，它在女性范畴中是固有定义的（零女性值表示男性，反之亦然vice-versa）。<br><br>再通俗地理解，就拿性别来说，其实一个虚拟变量就够了，比如 1 的时候是“男”， 0 的时候是”非男”，即为女。如果设置两个虚拟变量“男”和“女”，语义上来说没有问题，可以理解，但是在回归预测中会多出一个变量，多出的这个变量将会对回归预测结果产生影响。<br>        &nbsp;&nbsp;&nbsp;<font color="grey">部分文字信息来自Dykin’ Blog</font> 
+
+<p><strong>虚拟变量陷阱的解决方法：</strong></p>
+<p>删除分类变量中的一个——如果有M个类别，在模型中使用M-1，可以忽略掉的值作为参考值。</p>
+<p>y = b<sub>o</sub> + b<sub>1</sub>x<sub>1</sub> + b<sub>2</sub>x<sub>2</sub> + b<sub>3</sub>D<sub>1</sub></p>
+<h3 id="注释–建立模型-stepwise-Regression"><a href="#注释–建立模型-stepwise-Regression" class="headerlink" title="注释–建立模型(stepwise Regression)"></a>注释–建立模型(stepwise Regression)</h3><p>有多种方法来选择适当的变量，例如：</p>
+<ul>
+<li>前向选择(前进法Forward Selection)</li>
+<li>逆向消除(后退法Backward Elimination)</li>
+<li>双向比较(bi-directional comparision)</li>
+</ul>
+<p>Backward Elimination:</p>
+<p>首先包含了所有的feature，然后每个feature都尝试去删除，测试删除的哪个feature对模型准确性有最大的提升，最终删掉对模型提升最高的一个特征。如此类推，直到删除feature并不能提升模型为止。</p>
+<h3 id="开始今天的学习"><a href="#开始今天的学习" class="headerlink" title="开始今天的学习"></a>开始今天的学习</h3><h4 id="预处理数据"><a href="#预处理数据" class="headerlink" title="预处理数据"></a>预处理数据</h4><p>运用第一天的处理步骤</p>
+<ul>
+<li>Import the libraries</li>
+<li>Import the DataSet</li>
+<li>Check for Missing Data</li>
+<li>Encode Categorical Data</li>
+<li>Make Dummy Variables if necessary and avoid dummy variable trap</li>
+<li>Feature Scaling will be taken care by the Library 3</li>
+</ul>
+<p>代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">dataset = pd.read_csv(<span class="string">'50_Starups.csv'</span>)</span><br><span class="line">X = dataset.iloc[ : , :<span class="number">-1</span>].values</span><br><span class="line">Y = dataset.iloc[ : , <span class="number">4</span>].values</span><br><span class="line"></span><br><span class="line"><span class="comment"># Encoding Categorical data</span></span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> LabelEncoder, OneHotencoder</span><br><span class="line">labelencoder = LabelEncoder()</span><br><span class="line">X[ : , <span class="number">3</span>] = labelencoder.fit_transform(X[ : , <span class="number">3</span>])</span><br><span class="line">onehotencoder = Onehotencoder(categorical_features= [<span class="number">3</span>])</span><br><span class="line">X =onehotencoder.fit_transform(X).toarray()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Avoiding Dummy Variable Trap</span></span><br><span class="line">X = X[ : , <span class="number">1</span>: ] <span class="comment">#从1 开始，并非0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Splitting the dataset into the Training set and Test set</span></span><br><span class="line"><span class="keyword">from</span> sklearn.cross_validation <span class="keyword">import</span> train_test_split</span><br><span class="line">X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = <span class="number">0.2</span>, random_state = <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="将模型拟合到训练集-Fitting-our-model-to-the-trainning-set"><a href="#将模型拟合到训练集-Fitting-our-model-to-the-trainning-set" class="headerlink" title="将模型拟合到训练集 (Fitting our model to the trainning set)"></a>将模型拟合到训练集 (Fitting our model to the trainning set)</h4><p>这个步骤和简单线性回归完全相同。</p>
+<p>我们将使用 <code>sklearn.linear_model</code>库中的<code>LinearRegression</code>类来拟合训练集，然后创建一个<code>LinearRegression</code>的<code>regressor</code>对象，再对对象使用<code>fit()</code>方法来处理。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#  Fitting Multiple Linear Regression to the Training set</span></span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line">regressor = LinearRegression()</span><br><span class="line">regressor.fit(X_train, Y_train)</span><br></pre></td></tr></table></figure>
+<h4 id="预测测试集的结果"><a href="#预测测试集的结果" class="headerlink" title="预测测试集的结果"></a>预测测试集的结果</h4><p>在这个步骤中，我们将预测从测试集观察到的结果。使用<code>Y_pred</code>来储存输出，最后使用<code>predict()</code>方法，来预测我们在上一步骤中训练的结果</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Predicting the test set results</span></span><br><span class="line">Y_pred = regressor.predict(X_test)</span><br><span class="line"></span><br><span class="line">plt.scatter(np.arange(<span class="number">10</span>),y_test, color = <span class="string">'red'</span>,label=<span class="string">'y_test'</span>)</span><br><span class="line">plt.scatter(np.arange(<span class="number">10</span>),y_pred, color = <span class="string">'blue'</span>,label=<span class="string">'y_pred'</span>)</span><br><span class="line">plt.legend(loc=<span class="number">2</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>第3天的学习结束啦，明天也要坚持哟😄</p>
+<hr>
+<h2 id="Day-4-逻辑效果-logistic-regression"><a href="#Day-4-逻辑效果-logistic-regression" class="headerlink" title="Day_4 逻辑效果(logistic regression)"></a>Day_4 逻辑效果(logistic regression)</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>逻辑回归在某些书中也被称为<strong>对数几率回归</strong>,逻辑回归适合于处理分类问题，目的在于预测当前对象属于哪个分类组，它给出了一个0到1之间的离散二进制结果。</p>
+<p>一个非常典型的例子就是一个人到底会不会为即将到来的选举投票</p>
+<h3 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a><strong>疑问</strong></h3><p>它是如何工作的？？？</p>
+<p>逻辑回归通过依赖于它的<strong>基本逻辑函数</strong>估计概率，来测量因变量（我们想要预测的标签）和一个或多个独立变量（我们的特征）之间的关系。</p>
+<h3 id="Sigmoid-Function-S型曲线函数"><a href="#Sigmoid-Function-S型曲线函数" class="headerlink" title="Sigmoid Function (S型曲线函数)"></a><strong>Sigmoid Function (S型曲线函数)</strong></h3><p>SigMoid函数是一个S形曲线，它可以取任何实数，并将其映射到0到1之间的值，但绝对不受这些限制。</p>
+<p><img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D99/sign=a46bd6f1dd33c895a27e9472d01340df/0df3d7ca7bcb0a4659502a5f6f63f6246b60af62.jpg" alt="img"></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Error_Function.svg/480px-Error_Function.svg.png" alt="img"></p>
+<font color="gray">图片来自维基百科</font>
+
+
+<h3 id="进行预测"><a href="#进行预测" class="headerlink" title="进行预测"></a>进行预测</h3><p>概率必须转化为二进制值(binary)，以便实际进行预测。这是Logistic函数的任务，也称为乙状函数(Sigmoid function)。0和1之间的值将使用阈值分类器(threshold classifier)转换成0和1。</p>
+<h3 id="逻辑-vs-线性"><a href="#逻辑-vs-线性" class="headerlink" title="逻辑 vs 线性"></a>逻辑 vs 线性</h3><p>逻辑回归给你一个离散(discrete [dɪˈskri:t] )的结果，但线性回归给出了一个连续(continuous)的结果。</p>
 
       
     </div>
@@ -556,8 +648,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/25/Python/Python理论/基础知识/" rel="next" title="Python_Basic">
-                <i class="fa fa-chevron-left"></i> Python_Basic
+              <a href="/2018/07/25/Python/Python爬虫/正则表达式Regex/" rel="next" title="Python_Spider_Regex">
+                <i class="fa fa-chevron-left"></i> Python_Spider_Regex
               </a>
             
           </div>
@@ -566,8 +658,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/25/Python/Python爬虫/requests/" rel="prev" title="Python_Spider_requests">
-                Python_Spider_requests <i class="fa fa-chevron-right"></i>
+              <a href="/2018/07/25/博客工具/HEXO/" rel="prev" title="Hexo">
+                Hexo <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -675,7 +767,7 @@ var jiathis_config={
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -716,7 +808,11 @@ var jiathis_config={
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -773,7 +869,17 @@ var jiathis_config={
                     
                       
                     
-                    <span class="site-state-item-count">22</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -825,7 +931,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#机器学习"><span class="nav-number">1.</span> <span class="nav-text">机器学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念"><span class="nav-number">1.1.</span> <span class="nav-text">基础概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#监督学习"><span class="nav-number">1.2.</span> <span class="nav-text">监督学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#回归"><span class="nav-number">1.2.1.</span> <span class="nav-text">回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无监督学习"><span class="nav-number">1.2.2.</span> <span class="nav-text">无监督学习</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#机器学习"><span class="nav-number">1.</span> <span class="nav-text">机器学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念"><span class="nav-number">1.1.</span> <span class="nav-text">基础概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#监督学习"><span class="nav-number">1.2.</span> <span class="nav-text">监督学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#回归"><span class="nav-number">1.2.1.</span> <span class="nav-text">回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无监督学习"><span class="nav-number">1.2.2.</span> <span class="nav-text">无监督学习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-1"><span class="nav-number">1.3.</span> <span class="nav-text">Day_1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤一-——-导入必需数据科学库"><span class="nav-number">1.3.1.</span> <span class="nav-text">步骤一 —— 导入必需数据科学库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤二-——-设置工作目录，导入数据集"><span class="nav-number">1.3.2.</span> <span class="nav-text">步骤二 —— 设置工作目录，导入数据集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤三-——-缺失值处理"><span class="nav-number">1.3.3.</span> <span class="nav-text">步骤三 —— 缺失值处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释–建立模型-stepwise-Regression"><span class="nav-number">1.3.4.</span> <span class="nav-text">注释–建立模型(stepwise Regression)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始今天的学习"><span class="nav-number">1.3.5.</span> <span class="nav-text">开始今天的学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#预处理数据"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">预处理数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将模型拟合到训练集-Fitting-our-model-to-the-trainning-set"><span class="nav-number">1.3.5.2.</span> <span class="nav-text">将模型拟合到训练集 (Fitting our model to the trainning set)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#预测测试集的结果"><span class="nav-number">1.3.5.3.</span> <span class="nav-text">预测测试集的结果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-4-逻辑效果-logistic-regression"><span class="nav-number">1.4.</span> <span class="nav-text">Day_4 逻辑效果(logistic regression)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">1.4.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#疑问"><span class="nav-number">1.4.2.</span> <span class="nav-text">疑问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sigmoid-Function-S型曲线函数"><span class="nav-number">1.4.3.</span> <span class="nav-text">Sigmoid Function (S型曲线函数)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进行预测"><span class="nav-number">1.4.4.</span> <span class="nav-text">进行预测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑-vs-线性"><span class="nav-number">1.4.5.</span> <span class="nav-text">逻辑 vs 线性</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -874,7 +980,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共46.5k字</span>
+  <span class="post-count">博客全站共76.0k字</span>
 </div>
         
 <div class="busuanzi-count">

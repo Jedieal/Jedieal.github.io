@@ -125,7 +125,11 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://www.w3school.com.cn/i/ct_css_selector.gif">
 <meta property="og:image" content="http://chuantu.biz/t6/348/1532577914x-1566688688.png">
-<meta property="og:updated_time" content="2018-07-26T04:07:50.388Z">
+<meta property="og:image" content="http://www.w3school.com.cn/i/ct_boxmodel.gif">
+<meta property="og:image" content="http://www.w3school.com.cn/i/ct_css_boxmodel_example.gif">
+<meta property="og:image" content="http://www.w3school.com.cn/i/ct_css_positioning_relative_example.gif">
+<meta property="og:image" content="http://www.w3school.com.cn/i/ct_css_positioning_absolute_example.gif">
+<meta property="og:updated_time" content="2018-08-08T09:55:21.420Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS学习">
 <meta name="twitter:description" content="CSS入门学习">
@@ -403,7 +407,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-07-26 12:07:50" itemprop="dateModified" datetime="2018-07-26T12:07:50+08:00">2018-07-26</time>
+                <time title="修改时间：2018-08-08 17:55:21" itemprop="dateModified" datetime="2018-08-08T17:55:21+08:00">2018-08-08</time>
               
             
           </span>
@@ -610,6 +614,207 @@
 <p>为简单起见，可以将以上 3 个列表样式属性合并为一个方便的属性：<code>list-style</code></p>
 </blockquote>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">list-style</span>: <span class="built_in">url</span>(test.gif)  square inside</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="设置CSS表格"><a href="#设置CSS表格" class="headerlink" title="设置CSS表格"></a>设置CSS表格</h2><p><strong>一、 CSS表格边框</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">table</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>:  <span class="number">1px</span> solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>同时也可以设置边框颜色  <code>border: 1px solid green</code></p>
+</blockquote>
+<p><strong>二、 CSS单一边框(实线)</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">table</span></span><br><span class="line">  &#123;</span><br><span class="line">  <span class="attribute">border-collapse</span>:collapse;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>三、 CSS设置表格文本对齐方式</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">td</span></span><br><span class="line">  &#123;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">vertical-align</span>:bottom;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>四、 CSS设置表格内边距</strong></p>
+<blockquote>
+<p>如需控制表格中内容与边框的距离，请为 td 和 th 元素设置 padding 属性：</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">td</span></span><br><span class="line">  &#123;</span><br><span class="line">  <span class="attribute">padding</span>:<span class="number">15px</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>五、 CSS表格空单元设置</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">table</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="attribute">border-collapse</span>: separate;</span><br><span class="line"><span class="attribute">empty-cells</span>: hide;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hide</td>
+<td>不在空单元格周围绘制边框。</td>
+</tr>
+<tr>
+<td>show</td>
+<td>在空单元格周围绘制边框。默认。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>六、 CSS设置表格的页边距</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">table</span></span><br><span class="line">  &#123;</span><br><span class="line">  <span class="attribute">border-collapse</span>:separate;</span><br><span class="line">  <span class="attribute">border-spacing</span>:<span class="number">10px</span> <span class="number">50px</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>border-spacing length</strong></p>
+<ul>
+<li><p>如果定义一个 length 参数，那么定义的是水平和垂直间距。</p>
+</li>
+<li><p>如果定义两个 length 参数，那么第一个设置水平间距，而第二个设置垂直间距。</p>
+</li>
+</ul>
+<p><strong>七、 CSS表格标题位置</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type="text/css"&gt;</span><br><span class="line"><span class="selector-tag">caption</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="attribute">caption-side</span>:bottom;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;caption&gt;This is a caption&lt;/caption&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="CSS轮廓"><a href="#CSS轮廓" class="headerlink" title="CSS轮廓"></a>CSS轮廓</h2><blockquote>
+<p>轮廓（outline）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用</p>
+</blockquote>
+<p>使用<code>outline</code>属性</p>
+<h3 id="一、在元素周围画线"><a href="#一、在元素周围画线" class="headerlink" title="一、在元素周围画线"></a>一、在元素周围画线</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">  <span class="attribute">outline</span>:  <span class="number">#0F0</span> dotted thick;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>dotted:为点状线</li>
+</ul>
+<p>###二、设置Outline属性<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">  <span class="attribute">outline-style</span>: dotted;</span><br><span class="line">  <span class="attribute">outline-color</span>: <span class="number">#0F0</span>;</span><br><span class="line">  <span class="attribute">outline-width</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>常见<code>outline-style</code>:</strong></p>
+<ul>
+<li>dotted</li>
+<li>dashed</li>
+<li>solid </li>
+<li>double</li>
+<li>groove</li>
+<li>ridge</li>
+<li>inset</li>
+<li>outset</li>
+</ul>
+<blockquote>
+<p><font color="orange"><strong>注意:</strong></font>只有在规定了 !DOCTYPE 时，Internet Explorer 8 （以及更高版本） 才支持 outline-style 属性。</p>
+</blockquote>
+<hr>
+<h2 id="CSS框模型"><a href="#CSS框模型" class="headerlink" title="CSS框模型"></a>CSS框模型</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>如图所示</p>
+<p><img src="http://www.w3school.com.cn/i/ct_boxmodel.gif" alt="img"></p>
+<p>示例：假设框的每个边上有 10 个像素的外边距和 5 个像素的内边距。如果希望这个元素框达到 100 个像素，就需要将内容的宽度设置为 70 像素，请看下图：</p>
+<p><img src="http://www.w3school.com.cn/i/ct_css_boxmodel_example.gif" alt="img"></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">70px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<font color="orange"><strong>提示</strong></font>
+
+<ul>
+<li><p>内边距、边框和外边距可以应用于一个元素的所有边，也可以应用于单独的边。</p>
+</li>
+<li><p>外边距可以是负值，而且在很多情况下都要使用负值的外边距。</p>
+</li>
+</ul>
+<h3 id="CSS内边距"><a href="#CSS内边距" class="headerlink" title="CSS内边距"></a>CSS内边距</h3><blockquote>
+<p>元素的内边距在边框和内容区之间，控制该区的属性为 padding</p>
+</blockquote>
+<p>padding 属性接受长度值或百分比值，但不允许使用负值</p>
+<p><strong>一、单边内边距属性</strong></p>
+<ul>
+<li>padding-top</li>
+<li>padding-right</li>
+<li>padding-bottom</li>
+<li>padding-left</li>
+</ul>
+<p><strong>二、内边距的百分比数值</strong></p>
+<p>示例：<code>p {padding: 10%;}</code></p>
+<p><font color="orange"><strong>注意:</strong></font>上下内边距和左右内边距一致，即<strong>上下内边距</strong>的百分数会相对于<strong>父元素宽度</strong>设置，而不是相对高度。</p>
+<p><strong>三、示例</strong></p>
+<p>(1) 设置上下内边距为0.5cm,左右内边距为2.5cm</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0.5cm</span> <span class="number">2.5cm</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意： padding 左边设置上下的内边距，右边设置左右的内边距</p>
+</blockquote>
+<h3 id="CSS边框"><a href="#CSS边框" class="headerlink" title="CSS边框"></a>CSS边框</h3><blockquote>
+<p>元素的边框(border)是围绕元素内容和内边距的一条或多条线</p>
+</blockquote>
+<p>边框有三个属性： <strong>宽度、样式、颜色</strong></p>
+<p><strong>一、宽度</strong></p>
+<p><strong>语法：<code>border-width：；</code></strong></p>
+<p><strong>设置宽度：</strong></p>
+<ul>
+<li>thin ： 1px</li>
+<li>medium(默认值) : 2px</li>
+<li>thick : 3px</li>
+</ul>
+<p><strong>定义单边宽度</strong></p>
+<ul>
+<li>按照 top-right-bottom-left 顺时针顺序来设置各边宽度 ： <code>border-width: 1px 1px 1px 1px</code></li>
+<li>border-top-width</li>
+<li>border-right-widthnone</li>
+<li>border-bottom-width</li>
+<li>border-left-width</li>
+</ul>
+<p><strong>二、样式</strong></p>
+<p>语法：<code>border-style: ;</code></p>
+<p>单边样式：</p>
+<ul>
+<li>按照 top-right-bottom-left 顺时针顺序来设置各边样式</li>
+<li>border-top-style</li>
+<li>border-right-style</li>
+<li>border-bottom-style</li>
+<li>border-left-style</li>
+</ul>
+<p><strong>没有边框</strong></p>
+<ul>
+<li><code>border-style: none;</code></li>
+</ul>
+<p><strong>三、边框颜色</strong></p>
+<blockquote>
+<p>使用<code>border-color</code>属性，一次最多可以接受4个颜色值</p>
+</blockquote>
+<p><strong>单边颜色：</strong></p>
+<ul>
+<li>按照 top-right-bottom-left 顺时针顺序来设置各边样式</li>
+<li>border-top-color</li>
+<li>border-right-color</li>
+<li>border-bottom-color</li>
+<li>border-left-color</li>
+</ul>
+<p><strong>示例</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">border-style</span>: solid;</span><br><span class="line">  <span class="attribute">border-color</span>: blue <span class="built_in">rgb</span>(25%,35%,45%) <span class="number">#909090</span> red;</span><br><span class="line">  <span class="attribute">border-color</span>: transparent;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>四、所有边框设置在一个样式中</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>:  medium double <span class="built_in">rgb</span>(250, 0, 255) ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="CSS外边距"><a href="#CSS外边距" class="headerlink" title="CSS外边距"></a>CSS外边距</h3><blockquote>
+<p>设置外边距的最简单的方法就是使用 margin 属性。</p>
+<p>margin 属性接受任何长度单位，可以是像素、英寸、毫米或 em,margin 可以设置为 auto,也可以设置为百分比</p>
+</blockquote>
+<p>示例：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: top right bottom left;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">0px</span> <span class="number">15px</span> <span class="number">5px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="CSS定位"><a href="#CSS定位" class="headerlink" title="CSS定位"></a>CSS定位</h2><h3 id="CSS-position-属性"><a href="#CSS-position-属性" class="headerlink" title="CSS position 属性"></a>CSS position 属性</h3><blockquote>
+<p>通过使用 position 属性，我们可以选择 4 种不同类型的定位，这会影响元素框生成的方式。</p>
+</blockquote>
+<p><strong>position 属性值的含义：</strong></p>
+<ul>
+<li>static</li>
+</ul>
+<p>元素框正常生成。块级元素生成一个矩形框，作为文档流的一部分，行内元素则会创建一个或多个行框，置于其父元素中。</p>
+<ul>
+<li>relative</li>
+</ul>
+<p>元素框偏移某个距离。元素仍保持其未定位前的形状，它原本所占的空间仍保留。</p>
+<ul>
+<li>absolute</li>
+</ul>
+<p>元素框从文档流完全删除，并相对于其包含块定位。包含块可能是文档中的另一个元素或者是初始包含块。元素原先在正常文档流中所占的空间会关闭，就好像元素原来不存在一样。元素定位后生成一个块级框，而不论原来它在正常流中生成何种类型的框。</p>
+<ul>
+<li>fixed</li>
+</ul>
+<p>元素框的表现类似于将 position 设置为 absolute，不过其包含块是视窗本身。</p>
+<h3 id="使用滚动条来显示元素内溢出的内容"><a href="#使用滚动条来显示元素内溢出的内容" class="headerlink" title="使用滚动条来显示元素内溢出的内容"></a>使用滚动条来显示元素内溢出的内容</h3><blockquote>
+<p>当元素内容太大而超出规定区域时，如何设置溢出属性来规定相应的动作。</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  overflow: scroll;</span></span><br><span class="line"><span class="undefined">  overflow: hidden;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>overflow: hidden</code> :隐藏溢出元素中溢出的内容</li>
+<li><code>overflow: auto</code>:设置浏览器来自动地处理溢出</li>
+</ul>
+<h3 id="元素显示的优先级"><a href="#元素显示的优先级" class="headerlink" title="元素显示的优先级"></a>元素显示的优先级</h3><blockquote>
+<p>Z-index可被用于将在一个元素放置于另一元素之后。 Z-index: 设置元素的堆叠顺序。</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">img.x</span></span><br><span class="line"><span class="undefined">&#123;</span></span><br><span class="line"><span class="undefined">position:absolute;</span></span><br><span class="line"><span class="undefined">left:0px;</span></span><br><span class="line"><span class="undefined">top:0px;</span></span><br><span class="line"><span class="undefined">z-index:-1</span></span><br><span class="line"><span class="undefined">z-index:1</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="CSS-相对定位"><a href="#CSS-相对定位" class="headerlink" title="CSS 相对定位"></a>CSS 相对定位</h3><p>相对定位是一个非常容易掌握的概念。如果对一个元素进行相对定位，它将出现在它所在的位置上。然后，可以通过设置垂直或水平位置，让这个元素“相对于”它的起点进行移动。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="selector-tag">h2</span><span class="selector-class">.pos_left</span></span></span><br><span class="line"><span class="undefined">&#123;</span></span><br><span class="line"><span class="css"><span class="selector-tag">position</span><span class="selector-pseudo">:relative</span>;</span></span><br><span class="line"><span class="css"><span class="selector-tag">left</span><span class="selector-pseudo">:-20px</span></span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>这是位于正常位置的标题<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"pos_left"</span>&gt;</span>这个标题相对于其正常位置向左移动<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>注意，在使用相对定位时，无论是否进行移动，元素仍然占据原来的空间。因此，移动元素会导致它覆盖其它框。</p>
+<p><img src="http://www.w3school.com.cn/i/ct_css_positioning_relative_example.gif" alt="img"></p>
+<h3 id="CSS-绝对定位"><a href="#CSS-绝对定位" class="headerlink" title="CSS 绝对定位"></a>CSS 绝对定位</h3><p>绝对定位使元素的位置与文档流无关，因此不占据空间。这一点与相对定位不同，相对定位实际上被看作普通流定位模型的一部分，因为元素的位置相对于它在普通流中的位置。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#box_relative</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://www.w3school.com.cn/i/ct_css_positioning_absolute_example.gif" alt="img"></p>
+<p>可知，绝对定位的元素的位置相对于最近的已定位祖先元素，如果元素没有已定位的祖先元素，那么它的位置相对于最初的包含块。</p>
+
       
     </div>
 
@@ -790,7 +995,7 @@ var jiathis_config={
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -831,7 +1036,11 @@ var jiathis_config={
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -888,7 +1097,17 @@ var jiathis_config={
                     
                       
                     
-                    <span class="site-state-item-count">22</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -940,7 +1159,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS入门学习"><span class="nav-number">1.</span> <span class="nav-text">CSS入门学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-基础"><span class="nav-number">2.</span> <span class="nav-text">CSS 基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-语法"><span class="nav-number">2.1.</span> <span class="nav-text">CSS 语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS定义方式"><span class="nav-number">2.1.1.</span> <span class="nav-text">CSS定义方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-值的写法"><span class="nav-number">2.1.2.</span> <span class="nav-text">CSS 值的写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-高级语法"><span class="nav-number">2.1.3.</span> <span class="nav-text">CSS 高级语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS派生选择器"><span class="nav-number">2.1.4.</span> <span class="nav-text">CSS派生选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-id-选择器"><span class="nav-number">2.1.5.</span> <span class="nav-text">CSS id 选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常见链接样式"><span class="nav-number">2.1.5.1.</span> <span class="nav-text">常见链接样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#高级示例"><span class="nav-number">2.1.5.2.</span> <span class="nav-text">高级示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS列表"><span class="nav-number">2.1.6.</span> <span class="nav-text">CSS列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#无序列表的样式"><span class="nav-number">2.1.6.1.</span> <span class="nav-text">无序列表的样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#任意列表的样式"><span class="nav-number">2.1.6.2.</span> <span class="nav-text">任意列表的样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列表标志的位置"><span class="nav-number">2.1.6.3.</span> <span class="nav-text">列表标志的位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结–简写列表样式"><span class="nav-number">2.1.6.4.</span> <span class="nav-text">总结–简写列表样式</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS入门学习"><span class="nav-number">1.</span> <span class="nav-text">CSS入门学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-基础"><span class="nav-number">2.</span> <span class="nav-text">CSS 基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-语法"><span class="nav-number">2.1.</span> <span class="nav-text">CSS 语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS定义方式"><span class="nav-number">2.1.1.</span> <span class="nav-text">CSS定义方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-值的写法"><span class="nav-number">2.1.2.</span> <span class="nav-text">CSS 值的写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-高级语法"><span class="nav-number">2.1.3.</span> <span class="nav-text">CSS 高级语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS派生选择器"><span class="nav-number">2.1.4.</span> <span class="nav-text">CSS派生选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-id-选择器"><span class="nav-number">2.1.5.</span> <span class="nav-text">CSS id 选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常见链接样式"><span class="nav-number">2.1.5.1.</span> <span class="nav-text">常见链接样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#高级示例"><span class="nav-number">2.1.5.2.</span> <span class="nav-text">高级示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS列表"><span class="nav-number">2.1.6.</span> <span class="nav-text">CSS列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#无序列表的样式"><span class="nav-number">2.1.6.1.</span> <span class="nav-text">无序列表的样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#任意列表的样式"><span class="nav-number">2.1.6.2.</span> <span class="nav-text">任意列表的样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列表标志的位置"><span class="nav-number">2.1.6.3.</span> <span class="nav-text">列表标志的位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结–简写列表样式"><span class="nav-number">2.1.6.4.</span> <span class="nav-text">总结–简写列表样式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置CSS表格"><span class="nav-number">2.2.</span> <span class="nav-text">设置CSS表格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS轮廓"><span class="nav-number">2.3.</span> <span class="nav-text">CSS轮廓</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、在元素周围画线"><span class="nav-number">2.3.1.</span> <span class="nav-text">一、在元素周围画线</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS框模型"><span class="nav-number">2.4.</span> <span class="nav-text">CSS框模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">2.4.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS内边距"><span class="nav-number">2.4.2.</span> <span class="nav-text">CSS内边距</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS边框"><span class="nav-number">2.4.3.</span> <span class="nav-text">CSS边框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS外边距"><span class="nav-number">2.4.4.</span> <span class="nav-text">CSS外边距</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS定位"><span class="nav-number">2.5.</span> <span class="nav-text">CSS定位</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-position-属性"><span class="nav-number">2.5.1.</span> <span class="nav-text">CSS position 属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用滚动条来显示元素内溢出的内容"><span class="nav-number">2.5.2.</span> <span class="nav-text">使用滚动条来显示元素内溢出的内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元素显示的优先级"><span class="nav-number">2.5.3.</span> <span class="nav-text">元素显示的优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-相对定位"><span class="nav-number">2.5.4.</span> <span class="nav-text">CSS 相对定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-绝对定位"><span class="nav-number">2.5.5.</span> <span class="nav-text">CSS 绝对定位</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -989,7 +1208,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共46.5k字</span>
+  <span class="post-count">博客全站共76.0k字</span>
 </div>
         
 <div class="busuanzi-count">

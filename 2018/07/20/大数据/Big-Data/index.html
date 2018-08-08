@@ -128,7 +128,14 @@
 <meta property="og:image" content="https://nim.nosdn.127.net/NDA3MzIzNw%3D%3D%2FbmltYV8xNzIyMDY5MDgzXzE1MzI0MzcwMjMxMDlfZTllZTk3MWMtZWY5MC00NDk5LWE3YmItOGVkMGM0NWQ3Njg3">
 <meta property="og:image" content="https://nim.nosdn.127.net/NDA3MzIzNw%3D%3D%2FbmltYV8xNzIyMDY5MDgzXzE1MzI0MzcwMjMxMDlfYjlhZGZmYmEtZTZjOS00OTU5LWI1MzEtOTliNGU3NzViMzQ3">
 <meta property="og:image" content="https://nim.nosdn.127.net/NDA3MzIzNw%3D%3D%2FbmltYV8xNzIyMDY5MDgzXzE1MzI0MzcwMjMxMTBfOWI5YTk4Y2EtZmRmMS00ZjNiLWIxNWItZDcyODgzOWRlZmQ2">
-<meta property="og:updated_time" content="2018-07-25T15:18:50.403Z">
+<meta property="og:image" content="http://chuantu.biz/t6/348/1532610356x1822611227.png">
+<meta property="og:image" content="http://chuantu.biz/t6/349/1532668727x-1566688718.png">
+<meta property="og:image" content="http://chuantu.biz/t6/349/1532668891x-1376440240.png">
+<meta property="og:image" content="http://chuantu.biz/t6/349/1532669149x-1376440198.png">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1532679397844&di=a44f8c901caf468e834093e9a6601e64&imgtype=jpg&src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D1081394683%2C3054114785%26fm%3D214%26gp%3D0.jpg">
+<meta property="og:image" content="http://chuantu.biz/t6/349/1532669473x-1404817724.png">
+<meta property="og:image" content="https://s8.postimg.cc/n3a01oi79/image.png">
+<meta property="og:updated_time" content="2018-07-28T03:33:34.937Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Big_Data">
 <meta name="twitter:description" content="大数据">
@@ -406,7 +413,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-07-25 23:18:50" itemprop="dateModified" datetime="2018-07-25T23:18:50+08:00">2018-07-25</time>
+                <time title="修改时间：2018-07-28 11:33:34" itemprop="dateModified" datetime="2018-07-28T11:33:34+08:00">2018-07-28</time>
               
             
           </span>
@@ -717,6 +724,120 @@
 <p><strong>查询分桶表：</strong><br><code>select * from emp cluster by deptno;</code></p>
 <h4 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select * from emp;</span><br><span class="line"></span><br><span class="line">set hive.mapred.mode = nonstrict (默认)</span><br><span class="line">select * from ori_partitioned_target where p_time = <span class="string">'20111230000010'</span>;</span><br></pre></td></tr></table></figure>
 <hr>
+<h2 id="MapReduce"><a href="#MapReduce" class="headerlink" title="MapReduce"></a>MapReduce</h2><p><strong>日志的固定格式：</strong></p>
+<p>访问时间 用户ID 查询词 该URL在返回结果中的排名 用户点击的顺序号 用户点击的URL </p>
+<h2 id="需求-分析搜索结果中，排名第一，点击率第二的日志信息"><a href="#需求-分析搜索结果中，排名第一，点击率第二的日志信息" class="headerlink" title="需求: 分析搜索结果中，排名第一，点击率第二的日志信息"></a><strong>需求:</strong> 分析搜索结果中，排名第一，点击率第二的日志信息</h2><p><img src="http://chuantu.biz/t6/348/1532610356x1822611227.png" alt="img"></p>
+<p><strong>一、 使用MapReduce</strong></p>
+<ul>
+<li>原理： <ul>
+<li>根据Google发表的一篇论文提出： MapReduce计算模型</li>
+<li>MapReduce的问题来源： PageRank问题 （网页排名）</li>
+</ul>
+</li>
+<li>实战：<ul>
+<li>依赖的jar包</li>
+</ul>
+</li>
+</ul>
+<p><strong>二、 使用 Spark</strong></p>
+<ul>
+<li>原理：</li>
+</ul>
+<p><strong>三、 使用 Hive</strong></p>
+<ul>
+<li>原理：</li>
+</ul>
+<p><strong>四、 大数据项目标准、架构</strong></p>
+<hr>
+<h2 id="Hadoop"><a href="#Hadoop" class="headerlink" title="Hadoop"></a>Hadoop</h2><h3 id="Hadoop-简介"><a href="#Hadoop-简介" class="headerlink" title="Hadoop 简介"></a>Hadoop 简介</h3><h4 id="Hadoop-简介-1"><a href="#Hadoop-简介-1" class="headerlink" title="Hadoop 简介"></a>Hadoop 简介</h4><ul>
+<li>Hadoop 是 Apacha 软件基金会旗下的一个开源分布式计算平台，为用户提供了系统底层细节透明的分布式基础架构</li>
+<li>Hadoop是基于 Java 语言开发的，具有跨平台的特性，也可以部署在廉价计算机集群中</li>
+<li>Hadoop的核心是分布式文件系统HDFS(Hadoop Distributed File System) 和 MapReduce</li>
+<li>Hadoop是行业大数据标准开源软件</li>
+</ul>
+<h4 id="Hadoop-发展"><a href="#Hadoop-发展" class="headerlink" title="Hadoop 发展"></a>Hadoop 发展</h4><blockquote>
+<p>Hadoop由Apache Lucene 项目创始人 Doug Cutting 开发的文本搜索库，源自 Apache Nutch 项目</p>
+</blockquote>
+<ul>
+<li>2004， Nutch 模仿 GFS 开发了HDFS的前身 NDFS (Nutch Distributed File System)</li>
+<li>2004, 谷歌公司发表一篇阐述 MapReduce 分布式编程思想的论文</li>
+<li>2005， Nutch 开源实现谷歌的 MapReduce</li>
+<li>2006, NDFS、MapReduce 独立成为 Hadoop </li>
+<li>2008, Hadoop 正式成为 Apache 顶级项目</li>
+</ul>
+<h4 id="Hadoop-特性"><a href="#Hadoop-特性" class="headerlink" title="Hadoop 特性"></a>Hadoop 特性</h4><ul>
+<li>高可靠性</li>
+<li>高效性</li>
+<li>高可扩展性</li>
+<li>高容错性</li>
+<li>成本低</li>
+<li>运行在 Linux 平台上</li>
+<li>支持多种编程语言</li>
+</ul>
+<p>国内采用 Hadoop 的公司： 百度、淘宝、网易、华为、中国移动</p>
+<blockquote>
+<p>其中淘宝的Hadoop集群较大</p>
+</blockquote>
+<h4 id="Hadoop-应用"><a href="#Hadoop-应用" class="headerlink" title="Hadoop 应用"></a>Hadoop 应用</h4><p><img src="http://chuantu.biz/t6/349/1532668727x-1566688718.png" alt="img"></p>
+<p><img src="http://chuantu.biz/t6/349/1532668891x-1376440240.png" alt="img"></p>
+<h4 id="Hadoop-版本"><a href="#Hadoop-版本" class="headerlink" title="Hadoop 版本"></a>Hadoop 版本</h4><p>第二代 Hadoop 包含两个版本 ： 0.23.x  和 2.x </p>
+<p>这两个版本完全不同于Hadoop1.0，是一套全新的架构，包含 HDFS Federation 和 YARN 两个系统。相对0.23.X , 2.X 增加了 NameNode HA 和 Wire-compatibility 两个特性</p>
+<p><img src="http://chuantu.biz/t6/349/1532669149x-1376440198.png" alt="img"></p>
+<hr>
+<h3 id="Hadoop-生态系统"><a href="#Hadoop-生态系统" class="headerlink" title="Hadoop 生态系统"></a>Hadoop 生态系统</h3><h4 id="Hadoop-组图"><a href="#Hadoop-组图" class="headerlink" title="Hadoop 组图"></a>Hadoop 组图</h4><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1532679397844&amp;di=a44f8c901caf468e834093e9a6601e64&amp;imgtype=jpg&amp;src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D1081394683%2C3054114785%26fm%3D214%26gp%3D0.jpg" alt="img"></p>
+<p><strong>生态系统组件解释</strong></p>
+<p><img src="http://chuantu.biz/t6/349/1532669473x-1404817724.png" alt="img"></p>
+<h4 id="Hadoop-安装与使用"><a href="#Hadoop-安装与使用" class="headerlink" title="Hadoop 安装与使用"></a>Hadoop 安装与使用</h4><p><strong>一、 Linux</strong></p>
+<p>推荐选择Ubuntu操作系统，建议使用64位系统版本的Linux。若电脑的配置较好，推荐使用虚拟机安装</p>
+<p><strong>二、 Hadoop安装方式</strong></p>
+<ul>
+<li>单机模式： Hadoop默认模式为非分布式模式(本地模式)，无需进行其他配置即可运行。</li>
+</ul>
+<blockquote>
+<p>非分布式即单 JAVA 进程，方便进行调试</p>
+</blockquote>
+<ul>
+<li>伪分布式模式： Hadoop 可以在单节点上以伪分布式的方式运行</li>
+</ul>
+<blockquote>
+<p>Hadoop进程以分离的 java 进程来运行，节点即作为 NameNode 也作为 DataNode, 同时读取的是 HDFS 中的文件</p>
+</blockquote>
+<ul>
+<li>分布式模式： 使用多个节点构成集群环境来运行Hadoop</li>
+</ul>
+<p><font color="red"><b>注意：</b></font>Hadoop不会覆盖结果文件</p>
+<hr>
+<h2 id="HBase介绍"><a href="#HBase介绍" class="headerlink" title="HBase介绍"></a>HBase介绍</h2><h3 id="HBase访问接口"><a href="#HBase访问接口" class="headerlink" title="HBase访问接口"></a>HBase访问接口</h3><p><strong>一、 BigTable</strong></p>
+<p>BigTable是一个分布式存储系统。起初用于解决典型的互联网搜索问题</p>
+<p><strong>特点</strong></p>
+<p>(1) 使用谷歌的MR分布式并行计算模型来处理海量数据<br>(2) 使用谷歌分布式文件系统GFS作底层数据存储<br>(3) 使用Chubby提供协同服务管理<br>(4) 具有广泛的应用性、可扩展性、高性能和高可用性等<br>(5) 谷歌的许多项目存储在BT中，如搜素、地图，另外还有YouTube等</p>
+<p><strong> 建立互联网索引</strong></p>
+<p>(1) 爬虫抓取新页面，将页面每页一行的方式存储至 BigTable<br>(2) MR计算作业运行在整张表上，生成索引，为网络搜素提供准备</p>
+<p><strong> 搜索互联网</strong></p>
+<p>(1) 用户发起搜索请求<br>(2) 网络搜索应用查询建立好的索引，从BigTable得到网页<br>(3) 搜索结果返回给用户</p>
+<h3 id="HBase介绍-1"><a href="#HBase介绍-1" class="headerlink" title="HBase介绍"></a>HBase介绍</h3><blockquote>
+<p>HBase是一个高可靠、高性能、面向列、可伸缩的分布式数据库，是谷歌BT的<strong>开源实现</strong>。</p>
+</blockquote>
+<p><strong>用途</strong>：</p>
+<ul>
+<li>存储非结构化和半结构化的松散数据</li>
+<li>处理非常庞大的表，通过水平扩展的方式，由廉价计算机集群处理庞大的数据表</li>
+</ul>
+<p>对比BT与HBase</p>
+<p><img src="https://s8.postimg.cc/n3a01oi79/image.png" alt="img"></p>
+<h3 id="HBase关系数据库"><a href="#HBase关系数据库" class="headerlink" title="HBase关系数据库"></a>HBase关系数据库</h3><p><strong>(1) 数据类型：</strong></p>
+<p>HBase数据库采用相对传统关系数据库更为见到那的数据模型，把数据存储为<strong>未经解释的字符串</strong></p>
+<p><strong>(2) 数据操作：</strong></p>
+<p>只包含简单的插入、查询、删除、清空等，避免了复杂表和表之间的关系</p>
+<p><strong>(3) 存储模式：</strong></p>
+<p>关系数据库基于<strong>行模式</strong>存储的，而HBase是基于<strong>列存储</strong>的，不同的列族文件是分离的，每个列族由几个文件保存</p>
+<p><strong>(4) 数据索引：</strong></p>
+<p>关系数据库通常针对不同列构建复杂的多个索引，而HBase只有一个索引/行键，以至所有的访问方法，或通过行键访问，或通过行键扫描，从而系统不会停滞</p>
+<p><strong>(5) 数据维护：</strong></p>
+<p>关系数据库更新操作会将新值覆盖旧值，而HBase更新操作不会删除旧数据版本、而是生成一个新的版本，旧版本仍然保留</p>
+<p><strong>(6) 可伸缩性：</strong></p>
+<p>关系数据库难以实现<strong>横向扩展</strong>，而<strong>纵向扩展</strong>空间有限，而HBase和BT分布式数据库可以灵活的水平扩展，通过在集群中<strong>增加或减少硬件数量</strong>来实现性能伸缩</p>
+<hr>
 <h2 id="SQL操作"><a href="#SQL操作" class="headerlink" title="SQL操作"></a>SQL操作</h2><p><code>select * from db  where ;</code> : 从 db 中查看所有数据, where 为条件查询</p>
 
       
@@ -899,7 +1020,7 @@ var jiathis_config={
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -940,7 +1061,11 @@ var jiathis_config={
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -997,7 +1122,17 @@ var jiathis_config={
                     
                       
                     
-                    <span class="site-state-item-count">22</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1049,7 +1184,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#大数据"><span class="nav-number">1.</span> <span class="nav-text">大数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#搭配LINUX环境"><span class="nav-number">1.1.</span> <span class="nav-text">搭配LINUX环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java"><span class="nav-number">1.2.</span> <span class="nav-text">Java</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据概念"><span class="nav-number">1.3.</span> <span class="nav-text">数据概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HDFS的底层原理：代理对象与RPC"><span class="nav-number">1.4.</span> <span class="nav-text">HDFS的底层原理：代理对象与RPC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive"><span class="nav-number">1.4.1.</span> <span class="nav-text">Hive</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是Hive？"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">什么是Hive？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hive-的架构原理"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">Hive 的架构原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hive-与数据库比较"><span class="nav-number">1.4.1.3.</span> <span class="nav-text">Hive 与数据库比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hive-的数据类型"><span class="nav-number">1.4.1.4.</span> <span class="nav-text">Hive 的数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DDL数据定义与DML数据操作"><span class="nav-number">1.4.1.5.</span> <span class="nav-text">DDL数据定义与DML数据操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#小范例"><span class="nav-number">1.4.1.5.1.</span> <span class="nav-text">小范例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据操作"><span class="nav-number">1.4.1.5.2.</span> <span class="nav-text">数据操作</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#企业级优化"><span class="nav-number">1.4.1.6.</span> <span class="nav-text">企业级优化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Fetch-抓"><span class="nav-number">1.4.1.6.1.</span> <span class="nav-text">Fetch 抓</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地模式"><span class="nav-number">1.4.1.7.</span> <span class="nav-text">本地模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#严格模式"><span class="nav-number">1.4.1.8.</span> <span class="nav-text">严格模式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL操作"><span class="nav-number">1.5.</span> <span class="nav-text">SQL操作</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#大数据"><span class="nav-number">1.</span> <span class="nav-text">大数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#搭配LINUX环境"><span class="nav-number">1.1.</span> <span class="nav-text">搭配LINUX环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java"><span class="nav-number">1.2.</span> <span class="nav-text">Java</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据概念"><span class="nav-number">1.3.</span> <span class="nav-text">数据概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HDFS的底层原理：代理对象与RPC"><span class="nav-number">1.4.</span> <span class="nav-text">HDFS的底层原理：代理对象与RPC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive"><span class="nav-number">1.4.1.</span> <span class="nav-text">Hive</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是Hive？"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">什么是Hive？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hive-的架构原理"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">Hive 的架构原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hive-与数据库比较"><span class="nav-number">1.4.1.3.</span> <span class="nav-text">Hive 与数据库比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hive-的数据类型"><span class="nav-number">1.4.1.4.</span> <span class="nav-text">Hive 的数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DDL数据定义与DML数据操作"><span class="nav-number">1.4.1.5.</span> <span class="nav-text">DDL数据定义与DML数据操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#小范例"><span class="nav-number">1.4.1.5.1.</span> <span class="nav-text">小范例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据操作"><span class="nav-number">1.4.1.5.2.</span> <span class="nav-text">数据操作</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#企业级优化"><span class="nav-number">1.4.1.6.</span> <span class="nav-text">企业级优化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Fetch-抓"><span class="nav-number">1.4.1.6.1.</span> <span class="nav-text">Fetch 抓</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地模式"><span class="nav-number">1.4.1.7.</span> <span class="nav-text">本地模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#严格模式"><span class="nav-number">1.4.1.8.</span> <span class="nav-text">严格模式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MapReduce"><span class="nav-number">1.5.</span> <span class="nav-text">MapReduce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需求-分析搜索结果中，排名第一，点击率第二的日志信息"><span class="nav-number">1.6.</span> <span class="nav-text">需求: 分析搜索结果中，排名第一，点击率第二的日志信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hadoop"><span class="nav-number">1.7.</span> <span class="nav-text">Hadoop</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hadoop-简介"><span class="nav-number">1.7.1.</span> <span class="nav-text">Hadoop 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hadoop-简介-1"><span class="nav-number">1.7.1.1.</span> <span class="nav-text">Hadoop 简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hadoop-发展"><span class="nav-number">1.7.1.2.</span> <span class="nav-text">Hadoop 发展</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hadoop-特性"><span class="nav-number">1.7.1.3.</span> <span class="nav-text">Hadoop 特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hadoop-应用"><span class="nav-number">1.7.1.4.</span> <span class="nav-text">Hadoop 应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hadoop-版本"><span class="nav-number">1.7.1.5.</span> <span class="nav-text">Hadoop 版本</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hadoop-生态系统"><span class="nav-number">1.7.2.</span> <span class="nav-text">Hadoop 生态系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hadoop-组图"><span class="nav-number">1.7.2.1.</span> <span class="nav-text">Hadoop 组图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hadoop-安装与使用"><span class="nav-number">1.7.2.2.</span> <span class="nav-text">Hadoop 安装与使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HBase介绍"><span class="nav-number">1.8.</span> <span class="nav-text">HBase介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HBase访问接口"><span class="nav-number">1.8.1.</span> <span class="nav-text">HBase访问接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HBase介绍-1"><span class="nav-number">1.8.2.</span> <span class="nav-text">HBase介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HBase关系数据库"><span class="nav-number">1.8.3.</span> <span class="nav-text">HBase关系数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL操作"><span class="nav-number">1.9.</span> <span class="nav-text">SQL操作</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1098,7 +1233,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共46.5k字</span>
+  <span class="post-count">博客全站共76.0k字</span>
 </div>
         
 <div class="busuanzi-count">
